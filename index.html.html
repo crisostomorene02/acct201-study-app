@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCT 201 Exam Prep — KU Managerial Accounting</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#090c16;--bg2:#0d1122;--bg3:#121828;--card:#17203a;--card2:#1e2945;
+  --border:#263050;--text:#e2e6f2;--muted:#6e7a96;
+  --green:#27c97a;--red:#e05252;--yellow:#f0b42a;--accent:#4a96f5;
+  --m1:#f0b42a;--m2:#27c97a;--m3:#4a96f5;--m4:#b97af5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+header{
+  background:linear-gradient(135deg,#060e1c 0%,#0b1828 55%,#070d1a 100%);
+  border-bottom:1px solid var(--border);padding:14px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#004fa3,var(--accent));border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:18px;color:#fff;box-shadow:0 3px 14px rgba(74,150,245,.35);}
+.logo-text{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;}
+.logo-sub{font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:1px;}
+.hdr-stats{display:flex;gap:8px;}
+.sp{padding:5px 14px;background:var(--card);border:1px solid var(--border);border-radius:20px;display:flex;align-items:center;gap:7px;}
+.sp .n{font-family:'DM Mono',monospace;font-size:15px;font-weight:500;color:var(--accent);}
+.sp .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+#pct-n{color:var(--green);}
+.layout{display:flex;min-height:calc(100vh - 67px);}
+.sidebar{width:248px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--border);padding:14px 0;overflow-y:auto;position:sticky;top:67px;height:calc(100vh - 67px);}
+.sb-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;padding:0 17px 6px;font-weight:700;}
+.sb-btn{display:flex;align-items:center;gap:8px;padding:9px 17px;cursor:pointer;font-size:12.5px;color:var(--muted);border:none;background:none;width:100%;text-align:left;transition:all .15s;border-left:3px solid transparent;white-space:nowrap;overflow:hidden;}
+.sb-btn:hover{color:var(--text);background:rgba(255,255,255,.025);}
+.sb-btn.active{color:var(--accent);background:rgba(74,150,245,.08);border-left-color:var(--accent);}
+.sb-btn .cnt{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;padding:2px 5px;border-radius:4px;background:var(--card);color:var(--muted);flex-shrink:0;}
+.sb-btn.active .cnt{background:rgba(74,150,245,.15);color:var(--accent);}
+.sb-div{height:1px;background:var(--border);margin:8px 0;}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.d1{background:var(--m1);}.d2{background:var(--m2);}.d3{background:var(--m3);}.d4{background:var(--m4);}
+main{flex:1;padding:26px 30px;max-width:910px;}
+/* HOME */
+.home-title{font-family:'Playfair Display',serif;font-size:25px;margin-bottom:4px;}
+.home-sub{color:var(--muted);font-size:13px;margin-bottom:20px;line-height:1.6;}
+.view-tabs{display:flex;gap:3px;background:var(--card);padding:3px;border-radius:9px;border:1px solid var(--border);width:fit-content;margin-bottom:20px;}
+.vt{padding:7px 20px;border-radius:7px;cursor:pointer;font-size:12.5px;font-weight:600;border:none;background:none;color:var(--muted);transition:all .15s;font-family:'DM Sans',sans-serif;}
+.vt.active{background:var(--accent);color:#fff;}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.big-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;cursor:pointer;transition:all .2s;}
+.big-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,.45);}
+.m1.big-card{border-top:3px solid var(--m1);}.m2.big-card{border-top:3px solid var(--m2);}
+.m3.big-card{border-top:3px solid var(--m3);}.m4.big-card{border-top:3px solid var(--m4);}
+.bc-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:8px;}
+.m1 .bc-eyebrow{color:var(--m1);}.m2 .bc-eyebrow{color:var(--m2);}.m3 .bc-eyebrow{color:var(--m3);}.m4 .bc-eyebrow{color:var(--m4);}
+.bc-tag{font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.m1 .bc-tag{background:rgba(240,180,42,.12);color:var(--m1);}.m2 .bc-tag{background:rgba(39,201,122,.12);color:var(--m2);}
+.m3 .bc-tag{background:rgba(74,150,245,.12);color:var(--m3);}.m4 .bc-tag{background:rgba(185,122,245,.12);color:var(--m4);}
+.bc-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.35;}
+.bc-chapters{font-size:11.5px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.bc-footer{display:flex;align-items:center;justify-content:space-between;}
+.bc-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+.start-btn{padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.start-btn:hover{filter:brightness(1.15);}
+.m1 .start-btn{background:rgba(240,180,42,.14);color:var(--m1);}.m2 .start-btn{background:rgba(39,201,122,.14);color:var(--m2);}
+.m3 .start-btn{background:rgba(74,150,245,.14);color:var(--m3);}.m4 .start-btn{background:rgba(185,122,245,.14);color:var(--m4);}
+.bc-prog{height:2px;background:var(--bg);border-radius:1px;margin-top:14px;overflow:hidden;}
+.m1 .bc-prog-fill{background:var(--m1);}.m2 .bc-prog-fill{background:var(--m2);}
+.m3 .bc-prog-fill{background:var(--m3);}.m4 .bc-prog-fill{background:var(--m4);}
+.bc-prog-fill{height:100%;width:0%;border-radius:1px;transition:width .5s;}
+.wide-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;cursor:pointer;transition:all .2s;margin-top:14px;border-top:3px solid var(--accent);}
+.wide-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.4);}
+.ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+.ch-tile{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px;cursor:pointer;transition:all .15s;}
+.ch-tile:hover{border-color:var(--accent);background:rgba(74,150,245,.05);}
+.ct-num{font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:5px;}
+.ct-name{font-size:12px;font-weight:600;line-height:1.35;}
+/* QUIZ */
+.quiz-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.qh-left{display:flex;align-items:center;gap:10px;}
+.qh-badge{font-family:'DM Mono',monospace;font-size:10.5px;padding:4px 10px;border-radius:6px;background:rgba(74,150,245,.13);color:var(--accent);border:1px solid rgba(74,150,245,.25);}
+.qh-title{font-family:'Playfair Display',serif;font-size:19px;}
+.timer{font-family:'DM Mono',monospace;font-size:20px;padding:5px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;min-width:76px;text-align:center;}
+.prog-bar{height:3px;background:var(--card);border-radius:2px;margin-bottom:20px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .4s ease;}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;margin-bottom:18px;animation:fadeUp .28s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.qcard.correct{border-color:var(--green);}.qcard.wrong{border-color:var(--red);}
+.q-meta{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.qtype{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border-radius:4px;font-weight:700;}
+.qtype.mc{background:rgba(74,150,245,.12);color:var(--accent);}
+.qtype.calc{background:rgba(240,180,42,.12);color:var(--yellow);}
+.qchapter{font-size:10.5px;color:var(--muted);font-family:'DM Mono',monospace;}
+.qtext{font-size:15.5px;line-height:1.65;margin-bottom:18px;}
+.scenario{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:13px 15px;margin-bottom:15px;font-size:12.5px;color:var(--muted);line-height:1.6;}
+.scenario table{width:100%;border-collapse:collapse;margin-top:8px;}
+.scenario td,.scenario th{padding:5px 9px;text-align:left;font-size:12px;}
+.scenario th{color:var(--text);border-bottom:1px solid var(--border);font-weight:600;}
+.scenario td{border-bottom:1px solid rgba(38,48,80,.5);}
+.scenario td.r,.scenario th.r{text-align:right;font-family:'DM Mono',monospace;}
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{display:flex;align-items:center;gap:11px;padding:11px 15px;border-radius:10px;cursor:pointer;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13.5px;text-align:left;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.opt:not([disabled]):hover{border-color:var(--accent);background:rgba(74,150,245,.05);}
+.opt.cor{border-color:var(--green);background:rgba(39,201,122,.07);color:var(--green);}
+.opt.wrg{border-color:var(--red);background:rgba(224,82,82,.07);color:var(--red);}
+.opt-l{width:25px;height:25px;border-radius:5px;flex-shrink:0;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;}
+.cor .opt-l{background:rgba(39,201,122,.18);border-color:var(--green);color:var(--green);}
+.wrg .opt-l{background:rgba(224,82,82,.18);border-color:var(--red);color:var(--red);}
+.calc-row{display:flex;gap:10px;align-items:center;margin-top:8px;}
+.calc-in{flex:1;padding:11px 15px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font-size:15px;transition:border-color .15s;outline:none;}
+.calc-in:focus{border-color:var(--accent);}
+.calc-in.cor{border-color:var(--green);background:rgba(39,201,122,.05);}
+.calc-in.wrg{border-color:var(--red);background:rgba(224,82,82,.05);}
+.chk-btn{padding:11px 22px;border-radius:10px;cursor:pointer;background:var(--accent);color:#fff;border:none;font-size:13.5px;font-weight:600;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.chk-btn:hover{background:#3a88e8;}
+.hint-lnk{font-size:11.5px;color:var(--muted);cursor:pointer;margin-top:7px;display:inline-block;}
+.hint-lnk:hover{color:var(--accent);}
+.hint-box{display:none;margin-top:7px;font-size:12px;color:var(--muted);background:var(--bg);padding:9px 12px;border-radius:7px;border:1px solid var(--border);}
+.fb{margin-top:14px;padding:13px 15px;border-radius:10px;display:none;font-size:13px;line-height:1.6;}
+.fb.show{display:block;}
+.fb.cor{background:rgba(39,201,122,.07);border:1px solid rgba(39,201,122,.22);}
+.fb.wrg{background:rgba(224,82,82,.07);border:1px solid rgba(224,82,82,.22);}
+.fb-title{font-weight:700;margin-bottom:5px;font-size:13.5px;}
+.fb.cor .fb-title{color:var(--green);}.fb.wrg .fb-title{color:var(--red);}
+.sol{font-family:'DM Mono',monospace;font-size:11.5px;margin-top:7px;}
+.sol-step{padding:5px 9px;margin:3px 0;background:var(--bg);border-radius:5px;color:var(--text);}
+.nav-row{display:flex;gap:10px;margin-top:18px;align-items:center;}
+.nav-btn{padding:9px 20px;border-radius:9px;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.nav-btn:hover{border-color:var(--accent);color:var(--accent);}
+.nav-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
+.nav-btn.primary:hover{background:#3a88e8;}
+.nav-btn:disabled{opacity:.35;cursor:not-allowed;}
+.q-ctr{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-left:auto;}
+/* RESULTS */
+.results-title{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:4px;}
+.results-sub{color:var(--muted);font-size:13px;margin-bottom:26px;}
+.score-ring-wrap{display:flex;align-items:center;gap:28px;margin-bottom:28px;}
+.score-ring{width:110px;height:110px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:4px solid var(--green);flex-shrink:0;}
+.score-ring.mid{border-color:var(--yellow);}.score-ring.low{border-color:var(--red);}
+.ring-pct{font-family:'DM Mono',monospace;font-size:28px;font-weight:500;}
+.ring-pct.good{color:var(--green);}.ring-pct.mid{color:var(--yellow);}.ring-pct.low{color:var(--red);}
+.ring-sub{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
+.results-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;flex:1;}
+.rs-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;}
+.rs-n{font-family:'DM Mono',monospace;font-size:22px;color:var(--accent);margin-bottom:3px;}
+.rs-l{font-size:11px;color:var(--muted);}
+.breakdown-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.ch-results{display:flex;flex-direction:column;gap:8px;margin-bottom:26px;}
+.ch-result-row{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;}
+.cr-name{font-size:13px;font-weight:600;flex:1;}
+.cr-score{font-family:'DM Mono',monospace;font-size:13px;min-width:50px;text-align:right;}
+.cr-bar{flex:2;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;}
+.cr-fill{height:100%;border-radius:3px;}
+.results-actions{display:flex;gap:12px;flex-wrap:wrap;}
+/* FORMULAS */
+.formula-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+.formula-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;}
+.formula-card h3{font-size:13px;color:var(--yellow);margin-bottom:16px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;display:flex;align-items:center;gap:10px;}
+.fc-tag{font-size:9px;padding:2px 7px;border-radius:4px;background:rgba(240,180,42,.12);color:var(--yellow);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+/* Each formula block */
+.fr{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+.fr:last-child{margin-bottom:0;}
+.fr-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;}
+.fr-n{font-size:13px;font-weight:600;color:var(--text);}
+.fr-eq{font-family:'DM Mono',monospace;font-size:12.5px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:7px 12px;color:var(--accent);margin-bottom:8px;white-space:nowrap;overflow-x:auto;}
+.fr-plain{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:6px;}
+.fr-ex{font-size:11.5px;background:rgba(39,201,122,.07);border:1px solid rgba(39,201,122,.18);border-radius:6px;padding:6px 10px;color:var(--green);font-family:'DM Mono',monospace;line-height:1.5;}
+.fr-tip{font-size:11px;color:var(--yellow);margin-top:6px;padding:5px 9px;background:rgba(240,180,42,.07);border-radius:5px;border-left:2px solid var(--yellow);}
+.fr-fav{font-size:11px;color:var(--green);padding:4px 8px;background:rgba(39,201,122,.08);border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.fr-unfav{font-size:11px;color:var(--red);padding:4px 8px;background:rgba(224,82,82,.08);border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.fv-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.fv-cols .fr{margin-bottom:0;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg2);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* ── MOBILE ── */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;color:var(--text);}
+.hamburger svg{display:block;}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150;backdrop-filter:blur(2px);}
+.sidebar-overlay.show{display:block;}
+
+@media(max-width:720px){
+  /* Header */
+  header{padding:10px 16px;}
+  .logo-text{font-size:16px;}
+  .logo-sub{display:none;}
+  .logo-icon{width:32px;height:32px;font-size:15px;}
+  .hdr-stats{gap:5px;}
+  .sp{padding:4px 9px;}
+  .sp .n{font-size:13px;}
+  .sp .l{display:none;}
+  .hamburger{display:flex;margin-right:2px;}
+
+  /* Sidebar becomes a slide-in drawer */
+  .layout{display:block;}
+  .sidebar{
+    position:fixed;left:-260px;top:0;height:100%;z-index:200;
+    width:260px;transition:left .25s ease;padding-top:14px;
+    box-shadow:4px 0 24px rgba(0,0,0,.5);
+  }
+  .sidebar.open{left:0;}
+
+  /* Main takes full width */
+  main{padding:16px;max-width:100%;}
+
+  /* Cards: single column */
+  .card-grid{grid-template-columns:1fr;}
+  .ch-grid{grid-template-columns:1fr 1fr;}
+  .fv-cols{grid-template-columns:1fr;}
+  .results-stats{grid-template-columns:1fr 1fr 1fr;}
+
+  /* Quiz */
+  .quiz-hdr{flex-wrap:wrap;gap:8px;}
+  .qh-title{font-size:16px;}
+  .timer{font-size:17px;padding:4px 10px;}
+  .qtext{font-size:14.5px;}
+  .opt{font-size:13px;padding:12px 13px;}
+  .qcard{padding:18px;}
+  .calc-row{flex-direction:column;align-items:stretch;}
+  .chk-btn{width:100%;}
+
+  /* Nav buttons */
+  .nav-row{flex-wrap:wrap;}
+  .nav-btn{padding:10px 14px;font-size:12.5px;}
+  .q-ctr{width:100%;text-align:center;margin:0;}
+
+  /* View tabs */
+  .view-tabs{width:100%;overflow-x:auto;}
+  .vt{padding:7px 14px;font-size:12px;}
+
+  /* Formula sheet */
+  .fr-eq{white-space:pre-wrap;word-break:break-word;}
+
+  /* Home title */
+  .home-title{font-size:21px;}
+  .home-sub{font-size:12.5px;}
+
+  /* Big cards */
+  .bc-title{font-size:15px;}
+  .bc-chapters{font-size:11px;}
+
+  /* Results */
+  .score-ring-wrap{flex-direction:column;align-items:flex-start;}
+  .results-stats{width:100%;}
+  .results-title{font-size:21px;}
+}
+
+@media(max-width:400px){
+  .ch-grid{grid-template-columns:1fr;}
+  .hdr-stats .sp:nth-child(2){display:none;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <div class="logo">
+      <div class="logo-icon">A</div>
+      <div>
+        <div class="logo-text">ACCT 201 Exam Prep</div>
+        <div class="logo-sub">Managerial Accounting I · KU Spring 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="hdr-stats">
+    <div class="sp"><span class="n" id="tot-a">0</span><span class="l">Answered</span></div>
+    <div class="sp"><span class="n" id="tot-c">0</span><span class="l">Correct</span></div>
+    <div class="sp"><span class="n" id="pct-n">—</span><span class="l">Score</span></div>
+  </div>
+</header>
+
+<div class="sidebar-overlay" id="sb-overlay" onclick="closeSidebar()"></div>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div style="margin-bottom:6px;">
+      <div class="sb-lbl">Overview</div>
+      <button class="sb-btn active" onclick="showHome()">🏠 Dashboard <span class="cnt">91</span></button>
+      <button class="sb-btn" onclick="showFormulas()">📐 Formula Sheet</button>
+    </div>
+    <div class="sb-div"></div>
+    <div style="margin-bottom:6px;">
+      <div class="sb-lbl">Module 1 · Exam 1</div>
+      <button class="sb-btn" onclick="startGroup(['ch1','ch2','ch3'],'Module 1 · Exam 1')"><div class="dot d1"></div>Full Module Drill <span class="cnt">28</span></button>
+      <button class="sb-btn" onclick="loadCh('ch1')">Ch. 1 — Acct as a Tool <span class="cnt">8</span></button>
+      <button class="sb-btn" onclick="loadCh('ch2')">Ch. 2 — Cost Behavior <span class="cnt">10</span></button>
+      <button class="sb-btn" onclick="loadCh('ch3')">Ch. 3 — CVP Analysis <span class="cnt">10</span></button>
+    </div>
+    <div class="sb-div"></div>
+    <div style="margin-bottom:6px;">
+      <div class="sb-lbl">Module 2 · Exam 2</div>
+      <button class="sb-btn" onclick="startGroup(['ch4a','ch4b','ch7'],'Module 2 · Exam 2')"><div class="dot d2"></div>Full Module Drill <span class="cnt">26</span></button>
+      <button class="sb-btn" onclick="loadCh('ch4a')">Ch. 4A — Product Costs <span class="cnt">9</span></button>
+      <button class="sb-btn" onclick="loadCh('ch4b')">Ch. 4B — Job Order Costing <span class="cnt">9</span></button>
+      <button class="sb-btn" onclick="loadCh('ch7')">Ch. 7 — ABC Costing <span class="cnt">8</span></button>
+    </div>
+    <div class="sb-div"></div>
+    <div style="margin-bottom:6px;">
+      <div class="sb-lbl">Module 3 · Exam 3</div>
+      <button class="sb-btn" onclick="startGroup(['ch5','ch6'],'Module 3 · Exam 3')"><div class="dot d3"></div>Full Module Drill <span class="cnt">20</span></button>
+      <button class="sb-btn" onclick="loadCh('ch5')">Ch. 5 — Planning & Budgets <span class="cnt">10</span></button>
+      <button class="sb-btn" onclick="loadCh('ch6')">Ch. 6 — Variance Analysis <span class="cnt">10</span></button>
+    </div>
+    <div class="sb-div"></div>
+    <div>
+      <div class="sb-lbl">Module 4 · Exam 4</div>
+      <button class="sb-btn" onclick="startGroup(['ch8','ch10'],'Module 4 · Exam 4')"><div class="dot d4"></div>Full Module Drill <span class="cnt">17</span></button>
+      <button class="sb-btn" onclick="loadCh('ch8')">Ch. 8 — Decisions <span class="cnt">9</span></button>
+      <button class="sb-btn" onclick="loadCh('ch10')">Ch. 10/12 — Performance <span class="cnt">8</span></button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- HOME -->
+    <div id="home-view">
+      <div class="home-title">ACCT 201 Exam Prep</div>
+      <div class="home-sub">Launch a full drill by Module or Exam, or pick individual chapters. Each session ends with a chapter-by-chapter score breakdown.</div>
+      <div class="view-tabs">
+        <button class="vt active" onclick="setTab('module',this)">📦 By Module</button>
+        <button class="vt" onclick="setTab('exam',this)">📝 By Exam</button>
+        <button class="vt" onclick="setTab('chapter',this)">📖 By Chapter</button>
+      </div>
+
+      <!-- MODULE TAB -->
+      <div id="tab-module">
+        <div class="card-grid">
+          <div class="big-card m1" onclick="startGroup(['ch1','ch2','ch3'],'Module 1')">
+            <div class="bc-eyebrow">Module 1 <span class="bc-tag">Exam 1 — Feb 11</span></div>
+            <div class="bc-title">Cost Fundamentals</div>
+            <div class="bc-chapters">Ch. 1: Accounting as a Tool<br>Ch. 2: Cost Behavior &amp; Estimation<br>Ch. 3: CVP Analysis</div>
+            <div class="bc-footer"><span class="bc-count">28 questions</span><button class="start-btn">Start Drill →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m2" onclick="startGroup(['ch4a','ch4b','ch7'],'Module 2')">
+            <div class="bc-eyebrow">Module 2 <span class="bc-tag">Exam 2 — Mar 11</span></div>
+            <div class="bc-title">Product Costing</div>
+            <div class="bc-chapters">Ch. 4A: Product Costs &amp; Flow of Costs<br>Ch. 4B: Job Order Costing<br>Ch. 7: ABC &amp; Alternative Methods</div>
+            <div class="bc-footer"><span class="bc-count">26 questions</span><button class="start-btn">Start Drill →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m3" onclick="startGroup(['ch5','ch6'],'Module 3')">
+            <div class="bc-eyebrow">Module 3 <span class="bc-tag">Exam 3 — Apr 13</span></div>
+            <div class="bc-title">Budgets &amp; Variances</div>
+            <div class="bc-chapters">Ch. 5: Planning &amp; Forecasting<br>Ch. 6: Variance Analysis</div>
+            <div class="bc-footer"><span class="bc-count">20 questions</span><button class="start-btn">Start Drill →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m4" onclick="startGroup(['ch8','ch10'],'Module 4')">
+            <div class="bc-eyebrow">Module 4 <span class="bc-tag">Exam 4 — May 4</span></div>
+            <div class="bc-title">Decisions &amp; Evaluation</div>
+            <div class="bc-chapters">Ch. 8: Relevant Costs &amp; Decisions<br>Ch. 10/12: Performance Evaluation</div>
+            <div class="bc-footer"><span class="bc-count">17 questions</span><button class="start-btn">Start Drill →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+        </div>
+        <div class="wide-card" onclick="startGroup(['ch1','ch2','ch3','ch4a','ch4b','ch7','ch5','ch6','ch8','ch10'],'Comprehensive Final — All Modules')">
+          <div class="bc-eyebrow" style="color:var(--accent);">All Modules <span class="bc-tag" style="background:rgba(74,150,245,.12);color:var(--accent);">Final Exam Prep</span></div>
+          <div class="bc-title">Comprehensive Final — All 10 Topics</div>
+          <div class="bc-chapters">91 questions shuffled across all modules. Simulates the cumulative final exam.</div>
+          <div class="bc-footer"><span class="bc-count">91 questions</span><button class="start-btn" style="background:rgba(74,150,245,.14);color:var(--accent);">Start Full Drill →</button></div>
+        </div>
+      </div>
+
+      <!-- EXAM TAB -->
+      <div id="tab-exam" style="display:none">
+        <div class="card-grid">
+          <div class="big-card m1" onclick="startGroup(['ch1','ch2','ch3'],'Exam 1 Prep')">
+            <div class="bc-eyebrow">Exam 1 <span class="bc-tag">Feb 11 · Ch. 1, 2, 3</span></div>
+            <div class="bc-title">Cost Fundamentals Exam</div>
+            <div class="bc-chapters">Managerial vs Financial Accounting · Cost Behaviors · High-Low Method · Contribution Margin Income Statement · CVP · Breakeven · Margin of Safety · WACM · Cost-Plus Pricing</div>
+            <div class="bc-footer"><span class="bc-count">28 questions</span><button class="start-btn">Start Exam Prep →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m2" onclick="startGroup(['ch4a','ch4b','ch7'],'Exam 2 Prep')">
+            <div class="bc-eyebrow">Exam 2 <span class="bc-tag">Mar 11 · Ch. 4A, 4B, 7</span></div>
+            <div class="bc-title">Product Costing Exam</div>
+            <div class="bc-chapters">Product vs Period Costs · DM / DL / MOH · Flow of Costs T-Accounts · COGM / COGS / COGAS · PDMOH Rate · Job Order Costing · ABC · Process / Variable / Absorption Costing</div>
+            <div class="bc-footer"><span class="bc-count">26 questions</span><button class="start-btn">Start Exam Prep →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m3" onclick="startGroup(['ch5','ch6'],'Exam 3 Prep')">
+            <div class="bc-eyebrow">Exam 3 <span class="bc-tag">Apr 13 · Ch. 5, 6</span></div>
+            <div class="bc-title">Budgets &amp; Variances Exam</div>
+            <div class="bc-chapters">Standard Costs · Sales / Production / DM / DL Budgets · Cash Receipts &amp; Cash Payments · Top-Down vs Bottom-Up · DM Price &amp; Qty Variances · DL Rate &amp; Efficiency Variances · Pitchfork</div>
+            <div class="bc-footer"><span class="bc-count">20 questions</span><button class="start-btn">Start Exam Prep →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+          <div class="big-card m4" onclick="startGroup(['ch8','ch10'],'Exam 4 Prep')">
+            <div class="bc-eyebrow">Exam 4 <span class="bc-tag">May 4 · Ch. 8, 10, 12</span></div>
+            <div class="bc-title">Decisions &amp; Evaluation Exam</div>
+            <div class="bc-chapters">Relevant Costs · Sunk Costs · Special Orders · Make vs Buy · Constrained Resources · Keep or Eliminate · ROI · Residual Income · Balanced Scorecard · Financial Ratios</div>
+            <div class="bc-footer"><span class="bc-count">17 questions</span><button class="start-btn">Start Exam Prep →</button></div>
+            <div class="bc-prog"><div class="bc-prog-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER TAB -->
+      <div id="tab-chapter" style="display:none">
+        <div class="ch-grid">
+          <div class="ch-tile" onclick="loadCh('ch1')"><div class="ct-num">Ch. 1 · Module 1 · Exam 1</div><div class="ct-name">Accounting as a Tool</div></div>
+          <div class="ch-tile" onclick="loadCh('ch2')"><div class="ct-num">Ch. 2 · Module 1 · Exam 1</div><div class="ct-name">Cost Behavior &amp; Estimation</div></div>
+          <div class="ch-tile" onclick="loadCh('ch3')"><div class="ct-num">Ch. 3 · Module 1 · Exam 1</div><div class="ct-name">CVP Analysis</div></div>
+          <div class="ch-tile" onclick="loadCh('ch4a')"><div class="ct-num">Ch. 4A · Module 2 · Exam 2</div><div class="ct-name">Product Costs &amp; Flow</div></div>
+          <div class="ch-tile" onclick="loadCh('ch4b')"><div class="ct-num">Ch. 4B · Module 2 · Exam 2</div><div class="ct-name">Job Order Costing</div></div>
+          <div class="ch-tile" onclick="loadCh('ch7')"><div class="ct-num">Ch. 7 · Module 2 · Exam 2</div><div class="ct-name">ABC &amp; Alt. Costing</div></div>
+          <div class="ch-tile" onclick="loadCh('ch5')"><div class="ct-num">Ch. 5 · Module 3 · Exam 3</div><div class="ct-name">Planning &amp; Budgets</div></div>
+          <div class="ch-tile" onclick="loadCh('ch6')"><div class="ct-num">Ch. 6 · Module 3 · Exam 3</div><div class="ct-name">Variance Analysis</div></div>
+          <div class="ch-tile" onclick="loadCh('ch8')"><div class="ct-num">Ch. 8 · Module 4 · Exam 4</div><div class="ct-name">Managerial Decisions</div></div>
+          <div class="ch-tile" onclick="loadCh('ch10')"><div class="ct-num">Ch. 10/12 · Module 4 · Exam 4</div><div class="ct-name">Performance Evaluation</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULA SHEET -->
+    <div id="formula-view" style="display:none">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+        <div class="qh-badge">📐 Reference</div>
+        <div class="qh-title">Formula Sheet — Plain English</div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:24px;">Every formula below includes what it means in plain English, how to use it, and a worked example.</p>
+
+      <div class="formula-grid">
+
+        <!-- ── CH 2 ── -->
+        <div class="formula-card">
+          <h3>Ch. 2 — Cost Behavior &amp; Estimation <span class="fc-tag">Exam 1</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Total Cost Equation</div>
+            <div class="fr-eq">Total Cost = (Variable Cost per unit × # of units) + Fixed Cost</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> Your total costs = the part that grows with volume (variable) PLUS the flat amount you always pay (fixed).<br>📌 <strong>When to use:</strong> Predicting costs at any activity level. Plug in a volume and it spits out total cost.</div>
+            <div class="fr-ex">Example: VC = $5/unit, FC = $1,000, Units = 200<br>TC = ($5 × 200) + $1,000 = $2,000</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">High-Low Method — Step 1: Variable Cost per Unit</div>
+            <div class="fr-eq">VC per unit = (Cost at HIGH volume − Cost at LOW volume) ÷ (HIGH units − LOW units)</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> Find how much cost changes per unit by looking at only the busiest and slowest months.<br>📌 <strong>Key rule:</strong> Always pick HIGH and LOW by VOLUME (units), not by cost.</div>
+            <div class="fr-ex">High: 7,649 units → $847 | Low: 1,149 units → $197<br>VC = (847 − 197) ÷ (7,649 − 1,149) = 650 ÷ 6,500 = $0.10/unit</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">High-Low Method — Step 2: Fixed Cost</div>
+            <div class="fr-eq">Fixed Cost = Total Cost at any point − (VC per unit × Units at that point)</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> Once you know the variable cost per unit, plug in either data point to back out the flat fixed amount.<br>📌 <strong>Tip:</strong> Use either data point — you should get the same FC either way.</div>
+            <div class="fr-ex">FC = $847 − ($0.10 × 7,649) = $847 − $764.90 = $82.10</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Contribution Margin Income Statement (5-row format)</div>
+            <div class="fr-eq">Sales Revenue<br>− Variable Costs<br>= Contribution Margin<br>− Fixed Costs<br>= Operating Income</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> Organizes costs by BEHAVIOR (variable vs. fixed) instead of by function (COGS vs. operating). The CM line shows how much is left to cover fixed costs after selling.<br>📌 <strong>Know this cold</strong> — the 5 rows are always tested.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">R-Squared (R²) — Regression Goodness of Fit</div>
+            <div class="fr-eq">R² closer to 1.0 = better fit. Want R² &gt; 0.80 to trust the cost equation.</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> R² tells you what % of cost changes are explained by your chosen driver. An R² of 0.90 = 90% explained, which is great. An R² of 0.50 = only 50% explained — pick a different driver.</div>
+            <div class="fr-ex">R² = 0.93 → strong relationship, use this equation ✅<br>R² = 0.62 → weak relationship, find a better cost driver ❌</div>
+          </div>
+        </div>
+
+        <!-- ── CH 3 ── -->
+        <div class="formula-card">
+          <h3>Ch. 3 — CVP Analysis <span class="fc-tag">Exam 1</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Unit Contribution Margin (CM $)</div>
+            <div class="fr-eq">CM per unit = Sales Price per unit − Variable Cost per unit</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> How much money ONE unit "contributes" after covering its own variable costs. This goes toward paying fixed costs, then profit.<br>📌 Think of it as: the profit per unit BEFORE fixed costs.</div>
+            <div class="fr-ex">eCrabb: SP = $550, VC = $300 → CM = $550 − $300 = $250</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">CM Ratio (CM %)</div>
+            <div class="fr-eq">CM% = CM per unit ÷ Sales Price per unit</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> The percentage of each dollar of revenue that goes toward covering fixed costs + profit. A 45% CM ratio means 45 cents of every $1 in sales goes to fixed costs and profit.<br>📌 Use this when you know sales dollars but not units.</div>
+            <div class="fr-ex">eCrabb: CM% = $250 ÷ $550 = 45.45%</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Breakeven Point in UNITS</div>
+            <div class="fr-eq">Breakeven Units = (Fixed Costs + Desired Profit) ÷ CM per unit</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> How many units you need to sell so revenue exactly covers all costs (profit = $0). For a target profit, just replace $0 with the target.<br>📌 <strong>Always round UP</strong> — you can't sell a fraction of a product.</div>
+            <div class="fr-ex">FC = $800,000, CM = $250, Profit = $0<br>BE = $800,000 ÷ $250 = 3,200 units<br>For $50,000 profit: (800K + 50K) ÷ 250 = 3,400 units</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Breakeven Point in SALES DOLLARS</div>
+            <div class="fr-eq">Breakeven $ = (Fixed Costs + Desired Profit) ÷ CM Ratio %</div>
+            <div class="fr-plain">📌 <strong>When to use:</strong> When the problem gives you total sales revenue instead of units, or when it's easier to work in dollars.<br>📌 Same logic as units version — just replace CM per unit with CM%.</div>
+            <div class="fr-ex">FC = $800,000, CM% = 45.45%<br>BE$ = $800,000 ÷ 0.4545 = $1,760,000</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Margin of Safety (Units &amp; %)</div>
+            <div class="fr-eq">MoS Units = Expected Units − Breakeven Units<br>MoS % = MoS Units ÷ Expected Units</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> How far sales can DROP before you start losing money. A bigger MoS = less risky. A 30% MoS means sales could fall 30% before a loss occurs.</div>
+            <div class="fr-ex">Expected = 4,500 units, BE = 3,200 units<br>MoS = 1,300 units → MoS% = 1,300 ÷ 4,500 = 28.9%</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Multi-Product Breakeven (WACM)</div>
+            <div class="fr-eq">Step 1: Sales Mix % = Units of Product ÷ Total Units of All Products<br>Step 2: WACM = Σ (CM per unit × Sales Mix %)<br>Step 3: Total BE = Fixed Costs ÷ WACM<br>Step 4: Each product's BE = Total BE × its Sales Mix %</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> When selling multiple products, you need a blended "average" CM. WACM weights each product's CM by how much of total sales it represents.<br>📌 <strong>Round total BE up, then round each product normally.</strong></div>
+            <div class="fr-ex">Product A: CM=$250, mix=70% → contributes $175 to WACM<br>Product B: CM=$550, mix=30% → contributes $165 to WACM<br>WACM = $175 + $165 = $340</div>
+          </div>
+        </div>
+
+        <!-- ── CH 4A ── -->
+        <div class="formula-card">
+          <h3>Ch. 4A — Product Costs &amp; Flow of Costs <span class="fc-tag">Exam 2</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">The Three Product Cost Components</div>
+            <div class="fr-eq">Product Cost = Direct Materials (DM) + Direct Labor (DL) + Applied MOH</div>
+            <div class="fr-plain">📌 <strong>DM</strong> = Raw materials that physically become part of the product (e.g., lemon syrup in soda, wood in a chair).<br>📌 <strong>DL</strong> = Wages of workers who directly make the product (e.g., the person mixing the soda).<br>📌 <strong>MOH</strong> = Everything else in the factory that can't be directly traced — janitors, supervisors, factory rent, equipment depreciation.<br>📌 <strong>Period costs</strong> (advertising, R&amp;D, sales commissions, CEO salary) are NEVER product costs — they go straight to the income statement.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Flow of Costs Through the Three Inventory Accounts</div>
+            <div class="fr-eq">Raw Materials → Work In Process (WIP) → Finished Goods → Cost of Goods Sold</div>
+            <div class="fr-plain">📌 <strong>Raw Materials</strong>: Where materials sit until you start using them.<br>📌 <strong>WIP</strong>: Products being made but not finished yet. DM + DL + Applied MOH are all added here.<br>📌 <strong>Finished Goods</strong>: Completed products waiting to be sold.<br>📌 <strong>COGS</strong>: Product cost moves from Finished Goods to the income statement when sold.</div>
+          </div>
+
+          <div class="fv-cols">
+            <div class="fr">
+              <div class="fr-n">Total Manufacturing Costs (TMC)</div>
+              <div class="fr-eq">DM Used + DL + Applied MOH</div>
+              <div class="fr-plain">All product costs added to WIP this period. Use DM USED, not purchased.</div>
+            </div>
+            <div class="fr">
+              <div class="fr-n">Cost of Goods Manufactured (COGM)</div>
+              <div class="fr-eq">Cost of jobs/inventory that FINISHED production this period</div>
+              <div class="fr-plain">Transferred FROM WIP → Finished Goods. Still in WIP = not yet COGM.</div>
+            </div>
+            <div class="fr">
+              <div class="fr-n">Cost of Goods Available for Sale (COGAS)</div>
+              <div class="fr-eq">Beginning Finished Goods + COGM</div>
+              <div class="fr-plain">Total inventory that COULD be sold. Splits into: what was sold (COGS) and what wasn't (Ending FG).</div>
+            </div>
+            <div class="fr">
+              <div class="fr-n">Cost of Goods Sold (COGS)</div>
+              <div class="fr-eq">Cost of inventory that was actually SOLD to customers</div>
+              <div class="fr-plain">Moves from balance sheet (asset) → income statement (expense) when sold.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CH 4B ── -->
+        <div class="formula-card">
+          <h3>Ch. 4B — Job Order Costing <span class="fc-tag">Exam 2</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Step 1 — Predetermined Overhead Rate (PDMOH Rate)</div>
+            <div class="fr-eq">PDMOH Rate = Estimated (Budgeted) MOH ÷ Estimated (Budgeted) Cost Driver</div>
+            <div class="fr-plain">📌 <strong>Calculated ONCE at the start of the year</strong> using estimates (budgeted numbers).<br>📌 <strong>Cost driver</strong> is usually Direct Labor Hours (DLH) or Machine Hours — it's the thing that "causes" overhead.<br>📌 <strong>Only include MOH costs</strong> in the numerator — NOT direct labor, NOT period costs (advertising, delivery).</div>
+            <div class="fr-ex">Est. MOH = $26,000, Est. DLH = 8,000 hours<br>PDMOH Rate = $26,000 ÷ 8,000 = $3.25 per DLH</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Step 2 — Apply MOH to Each Job</div>
+            <div class="fr-eq">Applied MOH = Actual Cost Driver Used × PDMOH Rate</div>
+            <div class="fr-plain">📌 <strong>Applied throughout the year</strong> as jobs are worked on — using the RATE calculated in Step 1 × the actual hours/machine time that specific job used.<br>📌 This is why it's "applied" not "actual" — we're estimating based on usage.</div>
+            <div class="fr-ex">Job used 150 DLH × $3.25/DLH = $487.50 Applied MOH</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Product Cost per Unit</div>
+            <div class="fr-eq">Product Cost per Unit = (DM + DL + Applied MOH) ÷ Units in the Job</div>
+            <div class="fr-plain">📌 This is the per-unit cost that goes on the balance sheet (inventory) until the item is sold, then moves to COGS.</div>
+            <div class="fr-ex">Job: DM $8,000 + DL $4,000 + MOH $4,000 = $16,000 total<br>Job has 100 units → $16,000 ÷ 100 = $160/unit</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Under- vs. Over-Applied MOH</div>
+            <div class="fr-eq">Difference = Applied MOH − Actual MOH<br>Positive = Over-applied (jobs cost TOO MUCH)<br>Negative = Under-applied (jobs cost TOO LITTLE)</div>
+            <div class="fr-plain">📌 <strong>Over-applied:</strong> We charged jobs MORE overhead than we actually spent → adjust COGS down.<br>📌 <strong>Under-applied:</strong> We charged jobs LESS overhead than we actually spent → adjust COGS up.<br>📌 In ACCT 201, always close the balance to COGS at year-end.</div>
+            <div class="fr-ex">Applied = $30,000, Actual = $28,000<br>Difference = +$2,000 → Over-applied (closed to COGS as a decrease)</div>
+          </div>
+        </div>
+
+        <!-- ── CH 7 ── -->
+        <div class="formula-card">
+          <h3>Ch. 7 — ABC &amp; Alternative Costing <span class="fc-tag">Exam 2</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Activity-Based Costing (ABC) — 5 Steps</div>
+            <div class="fr-eq">Step 1: Identify activity pools (e.g., "Machine Setups," "Quality Inspections")<br>Step 2: Assign overhead costs to each pool<br>Step 3: Pool Rate = Pool Cost ÷ Total Cost Driver Volume<br>Step 4: Allocated Cost = Actual Driver Used × Pool Rate<br>Step 5: MOH per Unit = Total Allocated ÷ Units Produced</div>
+            <div class="fr-plain">📌 <strong>Why it's better than one PDMOH rate:</strong> Different products use activities differently. ABC charges each product based on what it ACTUALLY uses — more accurate than spreading overhead evenly.<br>📌 <strong>Key difference:</strong> Traditional costing = 1 rate. ABC = multiple rates (one per activity pool).</div>
+            <div class="fr-ex">Account Maintenance pool: $576,000 ÷ 3,000 accounts = $192/account<br>Basic service uses 2,000 accounts → $192 × 2,000 = $384,000 allocated</div>
+          </div>
+
+          <div class="fv-cols">
+            <div class="fr">
+              <div class="fr-n">Absorption Costing</div>
+              <div class="fr-eq">Product Cost = DM + DL + Variable MOH + FIXED MOH</div>
+              <div class="fr-plain">Required by GAAP for external reports. Fixed MOH is IN inventory (on balance sheet) until products are sold.</div>
+            </div>
+            <div class="fr">
+              <div class="fr-n">Variable Costing</div>
+              <div class="fr-eq">Product Cost = DM + DL + Variable MOH only<br>Fixed MOH → Period Expense (income statement)</div>
+              <div class="fr-plain">Used internally for decisions. Fixed MOH is expensed immediately — NOT stored in inventory. NOT allowed for GAAP.</div>
+            </div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-tip">⚠️ Costing System Quick Reference: Job Order = custom/unique products (high cost per item). Process Costing = mass identical products (Coca-Cola, Legos). ABC = when products use overhead activities very differently.</div>
+          </div>
+        </div>
+
+        <!-- ── CH 5 ── -->
+        <div class="formula-card">
+          <h3>Ch. 5 — Planning &amp; Budgeting <span class="fc-tag">Exam 3</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Standard Cost per Unit</div>
+            <div class="fr-eq">Standard Cost = Standard Quantity (per unit) × Standard Price (per unit of input)</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> The expected cost to make one unit under efficient conditions. Calculated separately for DM, DL, and MOH.<br>📌 Standard Qty = how much input ONE unit should need (including normal waste). Standard Price = expected price per unit of that input.</div>
+            <div class="fr-ex">DM: 5 lbs per unit × $2.00/lb = $10.00 standard DM cost per unit<br>DL: 0.5 hrs per unit × $12.00/hr = $6.00 standard DL cost per unit</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Budget Order of Preparation (Always in this order!)</div>
+            <div class="fr-eq">1. Sales Revenue Budget → 2. Production Budget → 3. DM Purchases Budget → 4. DL Budget → 5. Cash Receipts Budget → 6. Cash Payments Budget</div>
+            <div class="fr-plain">📌 Each budget feeds into the next. You MUST know sales before you can plan production. You MUST know production before you can plan materials purchases.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Production Budget — How many units to MAKE?</div>
+            <div class="fr-eq">Units to Produce = Budgeted Sales Units + Desired Ending Finished Goods − Beginning Finished Goods</div>
+            <div class="fr-plain">📌 <strong>Think of it like a T-account for Finished Goods inventory in units.</strong> You need to make enough to: (1) cover sales, (2) have a cushion at month-end, minus (3) what you already have from last month.<br>📌 Ending FG is usually given as a % of NEXT month's sales.</div>
+            <div class="fr-ex">Sales = 2,000, Ending FG = 20% of Nov (3,000) = 600, Beg FG = 400<br>To Produce = 2,000 + 600 − 400 = 2,200 units</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Direct Materials Budget — How many lbs/units of material to BUY?</div>
+            <div class="fr-eq">DM to Purchase = (Units to Produce × DM per unit) + Desired Ending RM − Beginning RM<br>DM Budget ($) = DM to Purchase × Standard Price per unit of DM</div>
+            <div class="fr-plain">📌 Same logic as Production Budget but for Raw Materials inventory.<br>📌 Ending RM is usually given as a % of NEXT month's production needs (not sales!).</div>
+            <div class="fr-ex">Produce 2,200 units × 6 lbs/unit = 13,200 lbs needed<br>+ Ending RM 1,920 − Beg RM 1,320 = 13,800 lbs to purchase<br>× $0.60/lb = $8,280 DM Budget</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Direct Labor Budget — How much will labor cost?</div>
+            <div class="fr-eq">DL Budget = Units to Produce × Standard DL Hours per unit × Wage Rate per hour</div>
+            <div class="fr-ex">2,200 units × 0.20 DLH/unit × $10/DLH = $4,400</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Cash Receipts Budget — How much cash comes IN?</div>
+            <div class="fr-eq">Cash Collected = (Prior A/R Balance) + (% of current month sales collected now) + (% of prior month sales collected now)</div>
+            <div class="fr-plain">📌 Not all sales = cash right away. If 40% is collected in month of sale and 60% next month, you're collecting parts of TWO months' sales each month.<br>📌 <strong>Use the Sales Revenue Budget dollar amounts, not units.</strong></div>
+            <div class="fr-ex">Oct sales $24,000: collect 40% = $9,600 in Oct, $14,400 in Nov<br>Also collect prior A/R balance of $15,000 in Oct<br>Total Oct receipts = $15,000 + $9,600 = $24,600</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Cash Payments Budget — How much cash goes OUT?</div>
+            <div class="fr-eq">Cash Paid = (Prior A/P Balance) + (% of current month purchases paid now)</div>
+            <div class="fr-plain">📌 Same idea as receipts but for purchases. If you pay 25% in month of purchase and 75% next month, you're paying parts of TWO months' purchases each month.<br>📌 <strong>Use DM Budget dollar amounts.</strong></div>
+            <div class="fr-ex">Oct purchases $8,280: pay 25% = $2,070 in Oct<br>Also pay prior A/P $6,000<br>Total Oct payments = $6,000 + $2,070 = $8,070</div>
+          </div>
+        </div>
+
+        <!-- ── CH 6 ── -->
+        <div class="formula-card">
+          <h3>Ch. 6 — Variance Analysis <span class="fc-tag">Exam 3</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">The Golden Rule: Favorable vs. Unfavorable</div>
+            <div class="fr-eq">Actual &lt; Standard → FAVORABLE (F) — good, cost less than expected<br>Actual &gt; Standard → UNFAVORABLE (U) — bad, cost more than expected</div>
+            <div class="fr-plain">📌 Think of it from the company's perspective: paying less or using less than expected = good (Favorable). Paying more or using more than expected = bad (Unfavorable).</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">DM Price Variance — "Did we pay the right price for materials?"</div>
+            <div class="fr-eq">(Actual Price − Standard Price) × Actual Quantity PURCHASED</div>
+            <div class="fr-plain">📌 <strong>Responsibility:</strong> Purchasing department (they control prices).<br>📌 <strong>Key:</strong> Use Qty PURCHASED (not used) because the price is set when you buy, not when you use it.</div>
+            <div class="fr-ex">AP = $0.55, SP = $0.50, Qty purchased = 10,000 lbs<br>= ($0.55 − $0.50) × 10,000 = $500 Unfavorable (paid more than expected)</div>
+            <div class="fr-tip">⚠️ If AP &gt; SP → Unfavorable. If AP &lt; SP → Favorable.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">DM Quantity Variance — "Did we use the right AMOUNT of materials?"</div>
+            <div class="fr-eq">(Actual Qty USED − Standard Qty ALLOWED) × Standard Price<br><br>Standard Qty Allowed = Standard Qty per unit × Actual units produced</div>
+            <div class="fr-plain">📌 <strong>Responsibility:</strong> Production department (they control usage/waste).<br>📌 <strong>Standard Qty Allowed</strong> = how much you SHOULD have used based on actual output. If you made 1,000 units and standard is 5 lbs each, you should have used 5,000 lbs.</div>
+            <div class="fr-ex">AQ used = 4,800, SQ allowed = 5 × 1,000 = 5,000, SP = $2/lb<br>= (4,800 − 5,000) × $2 = −$400 → $400 Favorable (used less than expected!)</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">DL Rate Variance — "Did we pay the right WAGE RATE?"</div>
+            <div class="fr-eq">(Actual Rate − Standard Rate) × Actual Hours WORKED</div>
+            <div class="fr-plain">📌 <strong>Responsibility:</strong> HR / Management (they set wages).<br>📌 This is the labor version of DM Price Variance — comparing actual hourly pay to what was budgeted.</div>
+            <div class="fr-ex">AR = $13/hr, SR = $12/hr, Actual hrs = 500<br>= ($13 − $12) × 500 = $500 Unfavorable (paid more per hour than planned)</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">DL Efficiency Variance — "Did workers take the right amount of TIME?"</div>
+            <div class="fr-eq">(Actual Hours − Standard Hours ALLOWED) × Standard Rate<br><br>Standard Hours Allowed = Standard Hours per unit × Actual units produced</div>
+            <div class="fr-plain">📌 <strong>Responsibility:</strong> Production supervisor (they manage worker efficiency).<br>📌 This is the labor version of DM Quantity Variance — comparing actual time worked to expected time.</div>
+            <div class="fr-ex">AH = 520, SH allowed = 0.5 × 1,000 = 500, SR = $12/hr<br>= (520 − 500) × $12 = $240 Unfavorable (took longer than expected)</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-tip">📌 The "Pitchfork" = split any variance into PRICE and QUANTITY forks. DM has 2 variances (Price + Quantity). DL has 2 variances (Rate + Efficiency). They are always tested as a pair.</div>
+          </div>
+        </div>
+
+        <!-- ── CH 8 ── -->
+        <div class="formula-card">
+          <h3>Ch. 8 — Managerial Decisions &amp; Relevant Costs <span class="fc-tag">Exam 4</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">What Makes a Cost "Relevant"?</div>
+            <div class="fr-eq">A cost is RELEVANT if it is: (1) a FUTURE cost AND (2) DIFFERENT between alternatives</div>
+            <div class="fr-plain">📌 <strong>Sunk costs = NEVER relevant.</strong> Money already spent cannot be changed by any decision you make today.<br>📌 <strong>Common/unavoidable costs = NEVER relevant.</strong> If a cost is the same no matter which option you pick, it doesn't affect the decision.</div>
+            <div class="fr-ex">Already spent $50K on equipment → sunk cost, ignore it ❌<br>Extra $10K to repair that equipment → future &amp; different → relevant ✅</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Special Order Decision — Should we accept a below-normal-price order?</div>
+            <div class="fr-eq">Accept if: Special Order Revenue &gt; Incremental (Variable) Costs<br>= if Incremental CM &gt; $0</div>
+            <div class="fr-plain">📌 <strong>Two requirements:</strong> (1) Must have excess (unused) capacity. (2) The price must cover variable costs (positive CM).<br>📌 Fixed costs are usually irrelevant — they're already being paid regardless.<br>📌 Watch for extra costs: special packaging, shipping, or tooling = relevant and must be subtracted from CM.</div>
+            <div class="fr-ex">Special price $80, VC $60/unit, 500 units ordered<br>Incremental CM = ($80 − $60) × 500 = $10,000 → ACCEPT ✅</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Make vs. Buy — Should we make it ourselves or outsource?</div>
+            <div class="fr-eq">Make cost = Avoidable costs (variable costs + any fixed costs that disappear if you stop making it)<br>Buy cost = Purchase price × units<br>Choose whichever is LOWER. Add opportunity costs if capacity can be reused.</div>
+            <div class="fr-plain">📌 <strong>Key word: AVOIDABLE.</strong> If a fixed cost stays even when you outsource (like building rent), it's irrelevant — don't count it on the "make" side.<br>📌 If you could use freed-up capacity to earn profit elsewhere, that opportunity cost goes on the "make" side too.</div>
+            <div class="fr-ex">Make: VC $8 + avoidable FC $2 = $10/unit<br>Buy: $9/unit → BUY (saves $1/unit) ✅</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Constrained Resources — What to produce when capacity is limited?</div>
+            <div class="fr-eq">Rank products by: CM per unit of the CONSTRAINT (not CM per unit alone)<br>CM per constrained unit = CM $ ÷ Units of constraint the product uses</div>
+            <div class="fr-plain">📌 <strong>The constraint</strong> is whatever you're running out of — machine hours, labor hours, shelf space, etc.<br>📌 Produce as much of the highest-ranked product as possible, then move to the next.<br>📌 DO NOT rank by CM per unit or by profit margin % — those ignore how much of the scarce resource each product consumes.</div>
+            <div class="fr-ex">Product X: CM $100, uses 5 machine hrs → $20 CM/hr<br>Product Y: CM $150, uses 10 machine hrs → $15 CM/hr<br>Rank: X first ($20 &gt; $15) even though Y has higher CM per unit</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Keep or Eliminate a Segment — Should we shut down a product/store/division?</div>
+            <div class="fr-eq">KEEP if: Segment CM &gt; Avoidable Fixed Costs of that segment<br>= Segment Margin is positive<br>ELIMINATE if: CM &lt; Avoidable Fixed Costs (losing money that can be stopped)</div>
+            <div class="fr-plain">📌 A segment can show a NET LOSS on the income statement but still be worth keeping if its CM covers its AVOIDABLE fixed costs AND contributes to common fixed costs.<br>📌 <strong>Unavoidable (common) fixed costs stay no matter what</strong> — they're irrelevant to the decision.</div>
+            <div class="fr-ex">CM = $80,000, Avoidable FC = $60,000, Common FC = $40,000<br>Segment Margin = $80K − $60K = +$20,000 → KEEP ✅<br>(Even though net income = $80K − $100K = −$20K loss when all FC allocated)</div>
+          </div>
+        </div>
+
+        <!-- ── CH 10/12 ── -->
+        <div class="formula-card">
+          <h3>Ch. 10 / 12 — Performance Evaluation <span class="fc-tag">Exam 4</span></h3>
+
+          <div class="fr">
+            <div class="fr-n">Return on Investment (ROI)</div>
+            <div class="fr-eq">ROI = Net Operating Income (NOI) ÷ Average Operating Assets<br><br>Or split into two parts:<br>ROI = Profit Margin % × Asset Turnover<br>where: Profit Margin = NOI ÷ Sales, Asset Turnover = Sales ÷ Avg Assets</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> How many dollars of profit the division earns for every dollar of assets it uses. Higher ROI = more efficient.<br>📌 <strong>Why split it?</strong> Separates two problems: (1) Are we earning enough profit per sale? (2) Are we generating enough sales from our assets?<br>📌 <strong>Managers can improve ROI by:</strong> increasing sales, cutting costs, or reducing assets (use less capital).</div>
+            <div class="fr-ex">NOI = $120,000, Avg Assets = $800,000<br>ROI = $120K ÷ $800K = 15%<br><br>Or: PM = $120K ÷ $960K sales = 12.5%, AT = $960K ÷ $800K = 1.2<br>ROI = 12.5% × 1.2 = 15% ✓</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Residual Income (RI)</div>
+            <div class="fr-eq">RI = NOI − (Minimum Required Rate of Return × Average Operating Assets)</div>
+            <div class="fr-plain">📌 <strong>What it means:</strong> The dollar amount of profit ABOVE the minimum return the company requires. Positive RI = created value. Negative RI = destroyed value.<br>📌 <strong>Why use RI instead of ROI?</strong> ROI can discourage managers from taking good projects that would lower their division's ROI%. RI eliminates that bias — any project earning above the minimum rate increases RI.</div>
+            <div class="fr-ex">NOI = $60,000, Min Rate = 10%, Avg Assets = $500,000<br>RI = $60,000 − (10% × $500,000) = $60,000 − $50,000 = $10,000 ✅</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Segment Margin</div>
+            <div class="fr-eq">Segment Margin = Contribution Margin − Traceable Fixed Costs<br>(Traceable = costs that ONLY exist because of this segment; would disappear if segment is eliminated)</div>
+            <div class="fr-plain">📌 <strong>Common fixed costs</strong> (like the CEO's salary, shared building) are NOT subtracted from segment margin — they can't be avoided by closing the segment.<br>📌 Segment Margin is the best measure of a segment's true profitability.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">The Balanced Scorecard (BSC) — 4 Perspectives</div>
+            <div class="fr-eq">1. Financial → "Are we making money?" (ROI, RI, Revenue growth)<br>2. Customer → "Do customers love us?" (Satisfaction scores, retention, market share)<br>3. Internal Business Processes → "Are we operating efficiently?" (Cycle time, defect rates)<br>4. Learning &amp; Growth → "Are we improving?" (Employee training, innovation)</div>
+            <div class="fr-plain">📌 The BSC says financial metrics alone aren't enough — you need all 4 perspectives to get a complete picture of performance.<br>📌 It links strategy to daily operations.</div>
+          </div>
+
+          <div class="fr">
+            <div class="fr-n">Key Financial Ratios (Ch. 12)</div>
+            <div class="fr-eq">Current Ratio = Current Assets ÷ Current Liabilities (liquidity — can we pay short-term bills?)<br>Debt-to-Equity = Total Debt ÷ Total Equity (leverage — how much debt vs. owner money?)<br>Gross Margin % = Gross Profit ÷ Net Sales (profitability of core product sales)</div>
+            <div class="fr-plain">📌 <strong>Current Ratio &gt; 1</strong> = more current assets than current liabilities = can pay short-term debts.<br>📌 <strong>Higher Gross Margin %</strong> = more profitable after direct production costs — better pricing power or lower COGS.</div>
+            <div class="fr-ex">Current Assets = $500K, Current Liabilities = $250K<br>Current Ratio = $500K ÷ $250K = 2.0 (healthy — $2 of current assets per $1 owed)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- QUIZ VIEW -->
+    <div id="quiz-view" style="display:none">
+      <div class="quiz-hdr">
+        <div class="qh-left">
+          <div class="qh-badge" id="qh-badge"></div>
+          <div class="qh-title" id="qh-title"></div>
+        </div>
+        <div class="timer" id="timer-box">00:00</div>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+      <div id="q-container"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+const CHAPTERS={
+  ch1:{short:'Ch. 1',qs:[
+    {t:'mc',q:'Which BEST describes managerial accounting?',opts:['Preparing annual GAAP financial statements for investors','Generating and analyzing relevant information to support managers\' strategic decision-making','Conducting independent external audits required by the SEC','Reporting historical transactions to shareholders and creditors'],a:1,exp:'Managerial accounting supports INTERNAL decision-making. No external audit required, not regulated by SEC — those belong to financial accounting.'},
+    {t:'mc',q:'Which is a key difference between managerial and financial accounting?',opts:['Managerial accounting is audited by independent CPAs','Managerial accounting reports consolidated results for the whole company','Managerial uses relevant, forward-looking data; financial uses historical transaction data','Financial reports are prepared on demand for internal management'],a:2,exp:'Managerial = future-oriented, relevant data for INTERNAL users. Financial = historical transactions for EXTERNAL users (investors, creditors).'},
+    {t:'mc',q:'Curt monitors his ice cream machines to ensure they are working properly. Which function?',opts:['Planning','Controlling','Evaluating','Decision-Making'],a:1,exp:'Controlling = monitoring day-to-day operations in real time. Not comparing to a budget (that = evaluating).'},
+    {t:'mc',q:'A manager prepares next year\'s strategic goals and a budget to allocate resources. Which function?',opts:['Controlling','Evaluating','Decision-Making','Planning'],a:3,exp:'Planning = setting goals + building a roadmap (budget). Keywords: "next year," "strategic goals," "budget."'},
+    {t:'mc',q:'A company compares budgeted sales to actual sales and finds a $20,000 shortfall. Which function?',opts:['Planning','Controlling','Evaluating','Decision-Making'],a:2,exp:'Evaluating = comparing actual results to the plan using variance analysis.'},
+    {t:'mc',q:'Curt prepares a mission, values, and vision statement for his company. Which function?',opts:['Controlling','Evaluating','Planning','Decision-Making'],a:2,exp:'Mission/vision/goals = Planning. Sets long-term direction before budgets or daily monitoring.'},
+    {t:'mc',q:'Which is TRUE about financial accounting?',opts:['Reports are on demand for internal users','It is regulated by the SEC and must follow GAAP','It focuses on segments of the business','External audits are not required'],a:1,exp:'Financial accounting = regulated by SEC, follows GAAP, requires independent CPA audits, reports to EXTERNAL users.'},
+    {t:'mc',q:'Management accountants are in what type of organizational position?',opts:['Line positions with direct authority over production','Staff positions that support managers without direct authority','They are always the CEO','They only work in the external audit department'],a:1,exp:'Staff positions — provide financial analysis to support line managers but do not directly control production.'},
+  ]},
+  ch2:{short:'Ch. 2',qs:[
+    {t:'mc',q:'As production INCREASES, which is TRUE about variable costs?',opts:['Total VC stays constant; VC per unit decreases','Total VC increases; VC per unit stays constant','Both total and per-unit VC increase','Total VC decreases; VC per unit increases'],a:1,exp:'TC = VC × units (total rises proportionally). VC PER UNIT never changes within the relevant range.'},
+    {t:'mc',q:'The J Café pays $10,000/year for equipment depreciation regardless of cups sold. This is a:',opts:['Variable cost','Mixed cost','Fixed cost','Step cost'],a:2,exp:'Fixed costs remain CONSTANT in total regardless of activity level. Depreciation = classic fixed cost.'},
+    {t:'mc',q:'The J Café\'s Grubhub fee is $1,240/month PLUS 3% of sales. This is classified as:',opts:['Variable','Fixed','Step','Mixed'],a:3,exp:'Mixed: $1,240 base (fixed) + 3% of sales (variable). TC = FC + (VC × units).'},
+    {t:'mc',q:'A ski resort charges $80 per week for the ski lift regardless of rides. This is a:',opts:['Variable cost','Mixed cost','Step cost','Fixed cost'],a:3,exp:'Flat fee regardless of usage = FIXED cost. Total cost does not change with number of rides.'},
+    {t:'mc',q:'A resort charges $25 for first 30 rides PLUS $5 per ride over 30. This is a:',opts:['Fixed cost','Variable cost','Mixed cost','Step cost'],a:2,exp:'MIXED: $25 flat (fixed) + $5/ride over 30 (variable). TC = FC + (VC × excess rides).'},
+    {t:'calc',q:'Using the High-Low Method, find the variable cost per unit.',sc:`<table><tr><th>Data Point</th><th class="r">Items Sold (X)</th><th class="r">Total Cost (TC)</th></tr><tr><td>Highest Volume</td><td class="r">7,649</td><td class="r">$847</td></tr><tr><td>Lowest Volume</td><td class="r">1,149</td><td class="r">$197</td></tr></table><br>Enter answer rounded to 2 decimal places (e.g. 0.10)`,a:0.10,tol:0.005,unit:'$/unit',hint:'VC = (TC_high − TC_low) ÷ (X_high − X_low)',sol:['VC = (847 − 197) ÷ (7,649 − 1,149)','= 650 ÷ 6,500 = $0.10 per item']},
+    {t:'calc',q:'Using VC = $0.10/unit, find the FIXED COST using the high data point.',sc:`<p>High point: 7,649 items, Total Cost = $847. VC = $0.10/unit.</p>`,a:82.1,tol:1,unit:'$',hint:'FC = TC_high − (VC × X_high)',sol:['FC = $847 − ($0.10 × 7,649)','= $847 − $764.90 = $82.10']},
+    {t:'mc',q:'Correct order for a Contribution Margin Income Statement:',opts:['Sales − Fixed Costs = CM − Variable Costs = OI','Sales − Variable Costs = CM − Fixed Costs = Operating Income','Sales − COGS = Gross Profit − Op. Expenses = OI','Sales − Total Costs = Operating Income'],a:1,exp:'CM Income Statement: Sales → minus Variable Costs → CONTRIBUTION MARGIN → minus Fixed Costs → Operating Income. Based on COST BEHAVIOR, not function.'},
+    {t:'mc',q:'In regression analysis, an R² of 0.65 indicates:',opts:['Excellent fit — use this equation','Poor fit — driver does not explain enough variation','Perfect fit with no unexplained variation','Variable costs exceed fixed costs'],a:1,exp:'You want R² > 0.80. An R² of 0.65 means only 65% of cost variation is explained — NOT reliable for prediction.'},
+    {t:'mc',q:'Clayton\'s Utilities: $360 at 3,000 cases, $480 at 9,000 cases. VC per case?',opts:['$0.02/case','$0.04/case','$0.10/case','$0.12/case'],a:0,exp:'VC = (480 − 360) ÷ (9,000 − 3,000) = 120 ÷ 6,000 = $0.02 per case (variable component of this mixed cost).'},
+  ]},
+  ch3:{short:'Ch. 3',qs:[
+    {t:'mc',q:'eCrabb: SP=$550, VC=$300. Unit Contribution Margin?',opts:['$550','$300','$250','$850'],a:2,exp:'CM = SP − VC = $550 − $300 = $250. Each unit contributes $250 toward fixed costs and then profit.'},
+    {t:'calc',q:'Calculate the BREAKEVEN POINT IN UNITS for the eCrabb.',sc:`<table><tr><th>Item</th><th class="r">Amount</th></tr><tr><td>Sales Price per Unit</td><td class="r">$550</td></tr><tr><td>Variable Cost per Unit</td><td class="r">$300</td></tr><tr><td>Total Fixed Costs</td><td class="r">$800,000</td></tr></table>`,a:3200,tol:0,unit:'units',hint:'BE = FC ÷ CM = 800,000 ÷ (550−300)',sol:['CM = $550 − $300 = $250','BE = $800,000 ÷ $250 = 3,200 units']},
+    {t:'calc',q:'Calculate the BREAKEVEN IN SALES DOLLARS for the eCrabb. (SP=$550, VC=$300, FC=$800,000)',sc:`<p>SP=$550 | VC=$300 | FC=$800,000</p>`,a:1760000,tol:0,unit:'$',hint:'BE$ = FC ÷ CM%. CM% = 250÷550 = 45.45%',sol:['CM% = $250 ÷ $550 = 45.45%','BE$ = $800,000 ÷ 0.4545 = $1,760,000']},
+    {t:'calc',q:'M&M Accents: SP=$50, Labor=$8, Materials=$12, Fixed Costs=$6,000. Breakeven units?',sc:`<table><tr><th>Item</th><th class="r">Amount</th></tr><tr><td>Sales Price</td><td class="r">$50</td></tr><tr><td>Labor per unit</td><td class="r">$8</td></tr><tr><td>Materials per unit</td><td class="r">$12</td></tr><tr><td>Total Fixed Costs</td><td class="r">$6,000</td></tr></table>`,a:200,tol:0,unit:'units',hint:'CM = 50−(8+12)=30. BE = 6,000÷30',sol:['VC = $8+$12 = $20','CM = $50−$20 = $30','BE = $6,000÷$30 = 200 units']},
+    {t:'calc',q:'M&M Accents needs $3,000 profit. (SP=$50, VC=$20, FC=$6,000). Units to sell?',sc:`<p>SP=$50 | VC=$20 | FC=$6,000 | Target Profit=$3,000</p>`,a:300,tol:0,unit:'units',hint:'Units = (FC + desired profit) ÷ CM',sol:['CM = $50−$20 = $30','Units = ($6,000+$3,000)÷$30 = 300 units']},
+    {t:'mc',q:'Margin of Safety is BEST defined as:',opts:['Total fixed costs to cover','The breakeven point in dollars','Excess of expected sales over breakeven — cushion before a loss','Difference between variable and fixed costs'],a:2,exp:'MoS = Expected Units − Breakeven Units. Shows how far sales can DROP before losses begin.'},
+    {t:'calc',q:'eCrabb expects 4,500 units sold. Breakeven = 3,200 units. MoS as a PERCENTAGE? (round to nearest whole %)',sc:`<p>Expected: 4,500 units | Breakeven: 3,200 units</p>`,a:29,tol:1,unit:'%',hint:'MoS = 4,500−3,200 = 1,300. MoS% = 1,300÷4,500',sol:['MoS = 4,500−3,200 = 1,300 units','MoS% = 1,300÷4,500 = 28.9% ≈ 29%']},
+    {t:'mc',q:'WACM is used when:',opts:['A company has only one product','A company sells multiple products with different CMs and sales mixes','Fixed costs are very high','Breakeven exceeds total capacity'],a:1,exp:'WACM blends CMs across multiple products by sales mix. WACM = Σ(Unit CM × Sales Mix%). Then BE = FC ÷ WACM.'},
+    {t:'mc',q:'Cost-plus pricing starts with:',opts:['Maximum price a customer will pay','Target profit','The cost of the product, then adds a markup','A competitor\'s price'],a:2,exp:'Cost-Plus: Cost + Markup = Sales Price. Markup% = (SP − Cost) ÷ Cost. eCrabb: Cost $300, 83% markup = $550.'},
+    {t:'mc',q:'If actual sales are BELOW breakeven, the company will:',opts:['Earn profit equal to CM','Break even exactly','Incur an operating LOSS','Generate positive residual income'],a:2,exp:'Below breakeven = fixed costs not fully covered by CM → OPERATING LOSS.'},
+  ]},
+  ch4a:{short:'Ch. 4A',qs:[
+    {t:'mc',q:'Which is classified as a PERIOD COST?',opts:['Direct materials used in production','Manufacturing overhead (factory costs)','Sales commissions paid to the sales team','Direct labor for production workers'],a:2,exp:'Period costs = outside production (R&D, Marketing, Distribution, Customer Service). Sales commissions = marketing = period cost, expensed immediately.'},
+    {t:'mc',q:'Which is DIRECT MATERIAL at a soda company?',opts:['Plant janitors\' wages','Lemon syrup used in the soda','Machinery oil and cleaning supplies','Market research expenses'],a:1,exp:'Direct Materials = raw materials that physically BECOME part of the product. Lemon syrup is IN the soda.'},
+    {t:'mc',q:'Manufacturing Overhead includes all EXCEPT:',opts:['Indirect materials (machine oil, cleaning supplies)','Indirect labor (factory supervisors, janitors)','Direct labor of production workers','Depreciation on factory equipment'],a:2,exp:'MOH = ALL mfg costs OTHER than DM or DL. Direct labor is its OWN category.'},
+    {t:'mc',q:'Which costs flow through Work-In-Process (WIP)?',opts:['Sales commissions and advertising','Direct Materials, Direct Labor, and Applied MOH','R&D costs','Customer service expenses'],a:1,exp:'DM, DL, and Applied MOH are debited to WIP. Period costs go directly to the income statement.'},
+    {t:'mc',q:'Difference between COGM and COGS?',opts:['They are always equal','COGM = cost of items that finished production; COGS = cost of items actually SOLD','COGS includes period costs; COGM does not','COGM applies only to merchandising companies'],a:1,exp:'COGM = WIP → Finished Goods. COGS = Finished Goods → Income Statement (when sold).'},
+    {t:'mc',q:'Conversion costs are defined as:',opts:['Direct Materials + Direct Labor','Direct Labor + Applied Manufacturing Overhead','Direct Materials + Manufacturing Overhead','Period Costs + Product Costs'],a:1,exp:'Conversion Costs = DL + Applied MOH. Costs to CONVERT raw materials into finished goods.'},
+    {t:'mc',q:'K-Mans Vans: Molly ($16K) and Sydney ($21.5K) completed production; Maren ($26.8K) still in WIP. Sydney was sold. COGM?',opts:['$64,300','$21,500','$16,000','$37,500'],a:3,exp:'COGM = cost of jobs that COMPLETED production. Molly+Sydney = $16K+$21.5K = $37,500. Maren still in WIP = excluded.'},
+    {t:'mc',q:'DM purchased $50K, DM used $45K, DL $30K, Applied MOH $20K. Total Manufacturing Costs?',opts:['$50,000','$95,000','$75,000','$145,000'],a:1,exp:'Total Mfg Costs = DM USED + DL + Applied MOH = $45K+$30K+$20K = $95K. Only what is USED flows to WIP.'},
+    {t:'mc',q:'Which type of company has THREE inventory accounts?',opts:['Service company','Merchandising company','Manufacturing company','All company types'],a:2,exp:'Only manufacturing companies have RM, WIP, and FG. Merchandising = Merchandise Inventory only. Service = no inventory.'},
+  ]},
+  ch4b:{short:'Ch. 4B',qs:[
+    {t:'mc',q:'Why use Applied MOH instead of Actual MOH?',opts:['Applied MOH is always lower','Actual MOH is unknown until year-end, but products must be costed during production','The IRS requires Applied MOH','Applied MOH always equals actual MOH'],a:1,exp:'We don\'t know total ACTUAL overhead until year-end, but products are costed AS THEY ARE PRODUCED. Use PDMOH rate (based on estimates) to apply overhead in real time.'},
+    {t:'calc',q:'Joz\'s Jazzy Jeans: Estimated MOH = $26,000. Estimated screen-printing hours = 8,000. PDMOH Rate?',sc:`<table><tr><th>Estimated MOH Item</th><th class="r">Amount</th></tr><tr><td>Equipment depreciation</td><td class="r">$5,100</td></tr><tr><td>Facility rent &amp; insurance</td><td class="r">$4,500</td></tr><tr><td>Plant janitors' wages</td><td class="r">$15,000</td></tr><tr><td>Machine repair</td><td class="r">$1,400</td></tr><tr><td><strong>Total Estimated MOH</strong></td><td class="r"><strong>$26,000</strong></td></tr><tr><td>Estimated Cost Driver (hours)</td><td class="r">8,000</td></tr></table>`,a:3.25,tol:0.01,unit:'$/hr',hint:'PDMOH Rate = Estimated MOH ÷ Estimated Cost Driver',sol:['PDMOH Rate = $26,000 ÷ 8,000 hrs = $3.25/hr','Note: Advertising, delivery wages, retail rent = period costs — NOT in MOH!']},
+    {t:'mc',q:'Applied MOH > Actual MOH means overhead is:',opts:['Under-applied — jobs under-costed','Over-applied — jobs over-costed','Under-applied — jobs over-costed','Over-applied — jobs under-costed'],a:1,exp:'Over-applied: Applied MORE than actual → jobs OVER-costed. Under-applied: actual > applied → jobs under-costed.'},
+    {t:'calc',q:'Storbeck Surfboards: Est. MOH=$225,000, Est. DL Hours=15,000. Each unit takes 3 DL hrs. Applied MOH per UNIT?',sc:`<p>Find PDMOH Rate first, then calculate applied MOH per unit.</p>`,a:45,tol:0,unit:'$/unit',hint:'PDMOH = 225,000÷15,000 = $15/hr. Applied = $15×3 hrs',sol:['PDMOH Rate = $225,000÷15,000 = $15.00/DLH','Applied MOH per unit = $15.00×3 = $45 per unit']},
+    {t:'mc',q:'Storbeck: DM=$80, DL=$90, Applied MOH=$45 per unit. Product Cost per Unit?',opts:['$80','$170','$215','$260'],a:2,exp:'Product Cost = DM+DL+Applied MOH = $80+$90+$45 = $215. Balance sheet value until sold.'},
+    {t:'mc',q:'At year-end, under/over-applied MOH is closed to:',opts:['Retained Earnings','Work-In-Process Inventory','Cost of Goods Sold','Raw Materials Inventory'],a:2,exp:'In ACCT 201, under/over-applied MOH is closed to COGS. MOH is temporary → zero at year-end after closing.'},
+    {t:'mc',q:'Job Order Costing is BEST suited for:',opts:['Millions of identical low-cost products','Unique, custom, high-cost products tailored to specific orders','Only intangible services','Products with equal overhead requirements'],a:1,exp:'Job Order = custom, distinct products (custom furniture, construction, custom jeans). Process Costing = mass-produced identical goods.'},
+    {t:'mc',q:'McKeever\'s uses 75% markup on product cost. Product cost = $8.00/unit. Sales price?',opts:['$8.00','$14.00','$13.50','$6.00'],a:1,exp:'Sales Price = Cost × (1 + markup%) = $8.00 × 1.75 = $14.00.'},
+    {t:'mc',q:'Common cost driver for applying manufacturing overhead:',opts:['Sales revenue','Number of customers','Direct Labor Hours or Machine Hours','Marketing expenditures'],a:2,exp:'Common MOH cost drivers: DL Hours, DL $, Machine Hours — measure production activity that drives indirect costs.'},
+  ]},
+  ch7:{short:'Ch. 7',qs:[
+    {t:'mc',q:'Main advantage of ABC over traditional job-order costing:',opts:['ABC always results in lower product costs','ABC uses one plantwide rate for simplicity','ABC allocates overhead more ACCURATELY using multiple activity-based drivers','ABC is required by GAAP'],a:2,exp:'ABC uses MULTIPLE cost drivers (one per activity pool) → more accurate MOH allocation, especially when products use activities differently.'},
+    {t:'calc',q:'Martin National Bank: Account Maintenance pool costs $576,000. Total accounts = 3,000 (Basic:2,000, Premier:1,000). Activity Pool Rate?',sc:`<p>Pool: Account Maintenance | Cost: $576,000 | Driver: # of Accounts | Total: 3,000</p>`,a:192,tol:0,unit:'$/account',hint:'Rate = Pool Cost ÷ Total Driver Volume = 576,000÷3,000',sol:['Rate = $576,000 ÷ 3,000 = $192 per account']},
+    {t:'mc',q:'Under ABC, Basic Service MOH for Account Maintenance (Rate=$192/acct, Basic accounts=2,000)?',opts:['$192,000','$384,000','$576,000','$288,000'],a:1,exp:'2,000 × $192 = $384,000 allocated to Basic Services.'},
+    {t:'mc',q:'Which costing method is REQUIRED by GAAP for external reporting?',opts:['Variable Costing','Activity-Based Costing','Absorption Costing','Process Costing only'],a:2,exp:'GAAP and IRS require ABSORPTION COSTING — assigns ALL manufacturing costs (DM, DL, variable AND fixed MOH) to the product.'},
+    {t:'mc',q:'Under VARIABLE COSTING, fixed manufacturing overhead is treated as:',opts:['A product cost in inventory','A period cost expensed when incurred','Allocated to jobs using a cost driver','Ignored entirely'],a:1,exp:'Variable Costing: Only VARIABLE mfg costs = product costs. Fixed MOH = PERIOD EXPENSE. Used for internal decision-making, not GAAP.'},
+    {t:'mc',q:'Process Costing is BEST suited for:',opts:['Custom furniture for specific clients','High-value items like aircraft','Large quantities of identical products like Coca-Cola','Products with very different manufacturing processes'],a:2,exp:'Process Costing = mass production of identical, homogeneous, low-cost items. Average cost assigned across all units.'},
+    {t:'mc',q:'An "Activity Cost Pool" in ABC is:',opts:['A single overhead rate for all products','A grouping of overhead costs driven by the SAME activity','The total of all fixed costs','The cost driver for variable costs'],a:1,exp:'Activity cost pool groups MOH costs caused by the same activity. Each pool gets its own driver and rate → more precise allocation.'},
+    {t:'mc',q:'Just-In-Time (JIT) production is characterized by:',opts:['Building large inventory buffers','Producing goods only as needed, with minimal inventory','Using a single overhead rate','Assigning costs only at year-end'],a:1,exp:'JIT = produce only what is NEEDED, WHEN needed. Minimizes inventory waste. Pull system driven by actual customer demand.'},
+  ]},
+  ch5:{short:'Ch. 5',qs:[
+    {t:'mc',q:'The FIRST budget prepared in the master budget process is:',opts:['Production budget','Direct labor budget','Sales revenue budget','Cash receipts budget'],a:2,exp:'Sales Revenue Budget comes FIRST — every other budget depends on expected sales.'},
+    {t:'mc',q:'World Brewing: Oct sales=2,000 cases, Nov sales=3,000, ending FG policy=20% of next month, beg FG=400. Oct production?',opts:['2,000','2,200','1,800','2,600'],a:1,exp:'Production = Sales + Ending FG − Beg FG = 2,000+(20%×3,000)−400 = 2,000+600−400 = 2,200 cases.'},
+    {t:'calc',q:'World Brewing Oct: Cases to produce=2,200, DM=6lbs/case, Beg RM=1,320lbs, Ending RM=1,920lbs. Pounds to PURCHASE?',sc:`<table><tr><th>Item</th><th class="r">Value</th></tr><tr><td>Oct Cases to Produce</td><td class="r">2,200</td></tr><tr><td>Std DM per Case</td><td class="r">6 lbs</td></tr><tr><td>Beginning RM Inventory</td><td class="r">1,320 lbs</td></tr><tr><td>Ending RM (10% × 19,200)</td><td class="r">1,920 lbs</td></tr></table>`,a:13800,tol:0,unit:'lbs',hint:'DM to Purchase = (Cases × DM/case) + Ending RM − Beg RM',sol:['Qty for Production = 2,200×6 = 13,200','+ Ending RM = 1,920','− Beg RM = 1,320','To Purchase = 13,800 lbs']},
+    {t:'calc',q:'World Brewing: Oct DM purchases=$8,280, pay 25% same month, 75% next. Beg A/P=$6,000. Cash paid in October?',sc:`<p>A/P Beg Balance: $6,000 | Oct Purchases: $8,280 | Pay 25% same month, 75% next</p>`,a:8070,tol:0,unit:'$',hint:'Cash = Pay prior A/P + (25% × Oct purchases)',sol:['Pay prior A/P: $6,000','Pay 25% of Oct: 0.25×$8,280 = $2,070','Total = $6,000+$2,070 = $8,070']},
+    {t:'mc',q:'Which is a PRO of Participative (bottom-up) budgeting?',opts:['Strategic alignment is easier since executives set all targets','Employees are more committed because they helped create the budget','It eliminates all budgetary slack','It is faster to prepare than top-down'],a:1,exp:'Bottom-up pros: employees are MORE committed (they built it), budgets reflect operational realities. Con: harder strategic alignment.'},
+    {t:'mc',q:'Zero-Based Budgeting means:',opts:['Start with last year\'s figures and adjust','Every dollar must be justified from scratch each period','Only variable costs are included','The budget nets to zero'],a:1,exp:'Zero-Based: START at $0, JUSTIFY every expense anew. vs. Incremental: start from prior year and explain changes only.'},
+    {t:'mc',q:'Russell Rackets: March sales=5,000, April=4,000. Ending FG policy=25% of next month. Units to PRODUCE in March?',opts:['5,000','5,250','4,750','5,500'],a:2,exp:'Production = 5,000 + (25%×4,000) − (25%×5,000) = 5,000+1,000−1,250 = 4,750 units.'},
+    {t:'mc',q:'Standard Cost equals:',opts:['Actual cost from last year','Budget amount ÷ units','Standard Quantity × Standard Price','Highest cost ever incurred'],a:2,exp:'Standard Cost = Std Qty × Std Price. Predetermined estimate of what it SHOULD cost under efficient conditions.'},
+    {t:'calc',q:'World Brewing: DL std=0.20 DLH/case at $10/DLH. Oct production=2,200 cases. Direct Labor Budget?',sc:`<p>Std DLH per case: 0.20 | Wage: $10/DLH | Cases: 2,200</p>`,a:4400,tol:0,unit:'$',hint:'DL Budget = Cases × DLH/case × Wage Rate',sol:['DLH = 2,200×0.20 = 440','DL Budget = 440×$10 = $4,400']},
+    {t:'mc',q:'The Cash Receipts Budget is based on:',opts:['Total budgeted production costs','The Sales Revenue Budget + cash collection policy','The Direct Materials Budget','Total fixed costs'],a:1,exp:'Cash Receipts = SALES Budget adjusted for collection policy (e.g., 40% collected month of sale, 60% next month).'},
+  ]},
+  ch6:{short:'Ch. 6',qs:[
+    {t:'mc',q:'A FAVORABLE variance means:',opts:['Actual costs were HIGHER than standard','Actual costs were LOWER than standard','The variance requires immediate investigation','Sales volume exceeded budget'],a:1,exp:'Favorable (F) = Actual < Standard → good for profit. Unfavorable (U) = Actual > Standard → bad (costs more than expected).'},
+    {t:'mc',q:'The DM PRICE Variance measures:',opts:['Whether more/fewer materials were used','Whether the PRICE PAID per unit was higher/lower than standard','The difference in actual vs budgeted sales','Whether labor was more/less efficient'],a:1,exp:'DM Price Variance = (AP − SP) × Actual Qty Purchased. Isolates the PRICE effect only.'},
+    {t:'calc',q:'Standard bread price=$0.50/loaf. Actual price=$0.55/loaf. 10,000 loaves purchased. DM Price Variance?',sc:`<p>Actual Price: $0.55 | Standard Price: $0.50 | Qty Purchased: 10,000 loaves</p><p>Enter the dollar amount.</p>`,a:500,tol:0,unit:'$ Unfavorable',hint:'DM PV = (AP − SP) × Actual Qty Purchased',sol:['= ($0.55−$0.50) × 10,000','= $0.05 × 10,000 = $500 Unfavorable']},
+    {t:'mc',q:'DM Quantity Variance formula:',opts:['(AP−SP) × Actual Qty Purchased','(AQ Used − SQ Allowed) × Standard Price','(AH − SH Allowed) × Standard Rate','(AP−BP) × Budgeted Volume'],a:1,exp:'DM QV = (AQ Used − SQ Allowed) × Std Price. SQ Allowed = Std Qty per unit × actual units produced.'},
+    {t:'calc',q:'Std DM=5 lbs at $2/lb. Actual production=1,000 units. Actual DM used=4,800 lbs. DM Quantity Variance?',sc:`<p>Std Qty: 5 lbs/unit | Std Price: $2/lb | Actual Production: 1,000 units | Actual DM Used: 4,800 lbs</p><p>Enter the dollar amount.</p>`,a:400,tol:0,unit:'$ Favorable',hint:'SQ Allowed = 5×1,000 = 5,000. DM QV = (AQ−SQ)×SP',sol:['SQ Allowed = 5×1,000 = 5,000 lbs','DM QV = (4,800−5,000)×$2 = $400 Favorable','Favorable: Used LESS than expected!']},
+    {t:'mc',q:'DL RATE Variance measures:',opts:['Whether workers were paid more/less than standard wage','Whether workers were faster/slower than expected','The difference in total labor hours','Whether MOH was correctly applied'],a:0,exp:'DL Rate Variance = (AR − SR) × Actual Hours. Measures PRICE of labor per hour. Responsibility = HR/management.'},
+    {t:'calc',q:'Standard labor rate=$12/hr. Actual rate=$13/hr. Actual hours=500. DL Rate Variance?',sc:`<p>Actual Rate: $13/hr | Standard Rate: $12/hr | Actual Hours: 500</p>`,a:500,tol:0,unit:'$ Unfavorable',hint:'DL RV = (AR − SR) × Actual Hours',sol:['= ($13−$12) × 500','= $1 × 500 = $500 Unfavorable']},
+    {t:'mc',q:'DL Efficiency Variance is UNFAVORABLE when:',opts:['Actual hours < Standard hours allowed','Workers paid below standard rate','Actual hours > Standard hours allowed','Materials prices were higher'],a:2,exp:'DL Efficiency = (AH − SH Allowed) × Std Rate. Unfavorable when ACTUAL hrs > STANDARD → took longer than expected.'},
+    {t:'mc',q:'Who is typically responsible for DM PRICE Variance?',opts:['Production supervisor','Purchasing manager','Sales manager','HR department'],a:1,exp:'PURCHASING negotiates and controls PRICES → DM Price Variance. PRODUCTION controls how much is USED → DM Quantity Variance.'},
+    {t:'mc',q:'The "pitchfork" in ACCT 201 refers to:',opts:['Sales price analysis','Operating income decomposition','Decomposing DM and DL variances into price and quantity components','Cash flow analysis'],a:2,exp:'The pitchfork decomposes total DM and DL variances into (1) Price/Rate and (2) Quantity/Efficiency prongs — identifying ROOT CAUSE.'},
+  ]},
+  ch8:{short:'Ch. 8',qs:[
+    {t:'mc',q:'Which costs are RELEVANT to a managerial decision?',opts:['Sunk costs (already paid)','Costs equal under all alternatives','Future costs that DIFFER between alternatives','Historical accounting costs'],a:2,exp:'RELEVANT costs: (1) Future-oriented AND (2) DIFFER between alternatives. Sunk costs = past, irrelevant. Common costs that don\'t change = irrelevant.'},
+    {t:'mc',q:'When should a company ACCEPT a special order below normal SP?',opts:['Only if it covers full product cost including fixed costs','Always if it covers variable costs','If it generates positive CM AND excess capacity exists','Only for repeat customers'],a:2,exp:'Accept special order IF: (1) excess capacity AND (2) SP > VC (positive CM). Fixed costs already covered by regular sales.'},
+    {t:'mc',q:'In Make vs. Buy, a company should BUY externally when:',opts:['Purchase price > cost to make','Avoidable costs of making > purchase price','Fixed costs allocated to product increase','Making always saves money'],a:1,exp:'Compare AVOIDABLE COSTS to make vs. PURCHASE PRICE. If buying is cheaper, outsource.'},
+    {t:'mc',q:'With a CONSTRAINED RESOURCE, products should be ranked by:',opts:['Highest total revenue','Highest profit margin %','Highest CM per unit of the CONSTRAINED RESOURCE','Alphabetical order'],a:2,exp:'Rank by CM per unit of constraint (e.g., CM per machine hour). Produce highest-ranked product first to maximize total CM.'},
+    {t:'mc',q:'A product line should be KEPT if:',opts:['It has positive operating income after all fixed allocations','Its CM EXCEEDS the avoidable fixed costs of the segment','It is the oldest product line','Total revenue would increase without it'],a:1,exp:'Keep if: CM > Avoidable Fixed Costs. A segment showing a loss may still contribute to unavoidable common fixed costs.'},
+    {t:'mc',q:'Which is a SUNK COST and therefore irrelevant?',opts:['Future variable costs of additional units','$50,000 already paid for equipment being replaced','Incremental fixed costs of a new product','Opportunity cost of using factory space'],a:1,exp:'Sunk cost = already paid, CANNOT be recovered → irrelevant. The $50K spent on equipment = classic sunk cost example.'},
+    {t:'mc',q:'Outsourcing is MOST attractive when:',opts:['Supplier charges more than full absorption cost','Purchase price < avoidable cost to make','Company wants to retain all employees','Fixed overhead cannot be avoided'],a:1,exp:'Outsource when Purchase Price < Avoidable Internal Cost. Unavoidable fixed costs are irrelevant to the decision.'},
+    {t:'mc',q:'Opportunity cost is BEST described as:',opts:['A cost already paid and not recoverable','The benefit FOREGONE from the best alternative NOT chosen','A variable cost increasing with volume','A fixed cost independent of activity'],a:1,exp:'Opportunity cost = value of the NEXT BEST ALTERNATIVE given up. If you use capacity for Product A, opportunity cost = profit from Product B foregone.'},
+    {t:'mc',q:'Product X earns $40 CM per machine hour; Product Y earns $30. Limited machine hours — prioritize:',opts:['Product Y (higher total revenue)','Product X (higher CM per constrained resource)','Both equally','Neither — add more machines'],a:1,exp:'Constrained by machine hours → rank by CM per machine hour. Product X = $40 > $30 → prioritize X to maximize total CM.'},
+  ]},
+  ch10:{short:'Ch. 10/12',qs:[
+    {t:'mc',q:'ROI is calculated as:',opts:['NOI ÷ Sales Revenue','NOI ÷ Average Operating Assets','Sales Revenue ÷ Average Assets','Operating Income × Asset Turnover'],a:1,exp:'ROI = NOI ÷ Average Operating Assets. Measures how efficiently a segment uses assets to generate profit.'},
+    {t:'mc',q:'ROI can be decomposed into:',opts:['Gross Margin + Asset Turnover','Profit Margin % × Asset Turnover','CM ÷ Fixed Costs','Revenue − Variable Costs'],a:1,exp:'ROI = Profit Margin × Asset Turnover. PM = NOI÷Sales. AT = Sales÷Avg Assets. Identifies if ROI issues are margin- or asset-related.'},
+    {t:'calc',q:'Division: NOI=$120,000, Average Operating Assets=$800,000. ROI?',sc:`<p>NOI: $120,000 | Avg Operating Assets: $800,000</p>`,a:15,tol:0,unit:'%',hint:'ROI = NOI ÷ Average Assets × 100',sol:['ROI = $120,000÷$800,000 = 0.15 = 15%']},
+    {t:'mc',q:'Residual Income (RI) is calculated as:',opts:['NOI ÷ Average Assets','NOI − (Min Required Rate × Average Assets)','Sales − VC − FC','CM − Fixed Costs'],a:1,exp:'RI = NOI − (Min Rate × Avg Assets). Gives an ABSOLUTE dollar amount of value created above the minimum required return.'},
+    {t:'mc',q:'Min required return=10%. Avg assets=$500,000. NOI=$60,000. Residual Income?',opts:['$10,000','$60,000','$50,000','$110,000'],a:0,exp:'RI = $60,000 − (10%×$500,000) = $60,000−$50,000 = $10,000. Positive → earns more than minimum required return.'},
+    {t:'mc',q:'The Balanced Scorecard evaluates performance using:',opts:['Only financial metrics','Only customer satisfaction','Four perspectives: Financial, Customer, Internal Processes, Learning & Growth','Two perspectives: Revenue and Cost'],a:2,exp:'BSC = 4 perspectives: (1) Financial, (2) Customer, (3) Internal Business Processes, (4) Learning & Growth. Balances financial AND non-financial metrics.'},
+    {t:'mc',q:'Segment Margin equals:',opts:['Revenue − Variable Costs','CM − Traceable Fixed Costs','Total Revenue − All Company Fixed Costs','Gross Profit'],a:1,exp:'Segment Margin = CM − Traceable Fixed Costs (avoidable if segment is eliminated). Common fixed costs NOT deducted.'},
+    {t:'mc',q:'Current Ratio is defined as:',opts:['Total Assets ÷ Total Liabilities','Current Assets ÷ Current Liabilities','Net Income ÷ Total Assets','Cash ÷ Current Liabilities'],a:1,exp:'Current Ratio = Current Assets ÷ Current Liabilities. Measures short-term liquidity. Ratio > 1 = can pay short-term debts.'},
+  ]},
+};
+
+let totalAns=0,totalCor=0;
+let session={qs:[],idx:0,answered:false,label:'',chProg:{}};
+let timerInt=null,elapsed=0;
+
+function updateStats(){
+  document.getElementById('tot-a').textContent=totalAns;
+  document.getElementById('tot-c').textContent=totalCor;
+  const p=totalAns>0?Math.round(totalCor/totalAns*100):null;
+  const el=document.getElementById('pct-n');
+  el.textContent=p!==null?p+'%':'—';
+  el.style.color=p===null?'var(--muted)':p>=80?'var(--green)':p>=60?'var(--yellow)':'var(--red)';
+}
+
+function showHome(){
+  document.getElementById('home-view').style.display='';
+  document.getElementById('formula-view').style.display='none';
+  document.getElementById('quiz-view').style.display='none';
+  stopTimer();
+  setSbActive(0);
+}
+function showFormulas(){
+  document.getElementById('home-view').style.display='none';
+  document.getElementById('formula-view').style.display='';
+  document.getElementById('quiz-view').style.display='none';
+  stopTimer();
+  setSbActive(1);
+}
+function setSbActive(n){
+  document.querySelectorAll('.sb-btn').forEach((b,i)=>b.classList.toggle('active',i===n));
+}
+function setTab(tab,btn){
+  document.querySelectorAll('.vt').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  ['module','exam','chapter'].forEach(t=>{
+    document.getElementById('tab-'+t).style.display=t===tab?'':'none';
+  });
+}
+
+function startGroup(chIds,label){
+  let qs=[];
+  let chProg={};
+  chIds.forEach(id=>{
+    CHAPTERS[id].qs.forEach(q=>qs.push({...q,chId:id,chShort:CHAPTERS[id].short}));
+    chProg[id]={name:CHAPTERS[id].short,ans:0,cor:0};
+  });
+  for(let i=qs.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [qs[i],qs[j]]=[qs[j],qs[i]];
+  }
+  session={qs,idx:0,answered:false,label,chProg};
+  startTimer();
+  document.getElementById('home-view').style.display='none';
+  document.getElementById('formula-view').style.display='none';
+  document.getElementById('quiz-view').style.display='';
+  renderQ();
+}
+function loadCh(id){startGroup([id],CHAPTERS[id].short+' — '+id.toUpperCase());}
+
+function startTimer(){
+  stopTimer();elapsed=0;
+  timerInt=setInterval(()=>{
+    elapsed++;
+    const b=document.getElementById('timer-box');
+    if(!b)return;
+    const m=Math.floor(elapsed/60),s=elapsed%60;
+    b.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  },1000);
+}
+function stopTimer(){if(timerInt){clearInterval(timerInt);timerInt=null;}}
+function fmtTime(s){return Math.floor(s/60)+'m '+s%60+'s';}
+
+function renderQ(){
+  session.answered=false;
+  const {qs,idx,label}=session;
+  document.getElementById('qh-badge').textContent=label;
+  document.getElementById('prog-fill').style.width=(idx/qs.length*100)+'%';
+  if(idx>=qs.length){renderResults();return;}
+  const q=qs[idx];
+  let h=`<div class="qcard" id="qcard">
+    <div class="q-meta">
+      <span class="qtype ${q.t==='mc'?'mc':'calc'}">${q.t==='mc'?'Multiple Choice':'Calculation'}</span>
+      <span class="qchapter">${q.chShort}</span>
+      <span style="margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">${idx+1} / ${qs.length}</span>
+    </div>
+    <div class="qtext">${q.q}</div>`;
+  if(q.sc)h+=`<div class="scenario">${q.sc}</div>`;
+  if(q.t==='mc'){
+    h+=`<div class="opts">`;
+    q.opts.forEach((o,i)=>h+=`<button class="opt" onclick="checkMC(${i})" id="opt${i}"><span class="opt-l">${'ABCD'[i]}</span>${o}</button>`);
+    h+=`</div>`;
+  } else {
+    h+=`<div class="calc-row"><input class="calc-in" type="number" id="calc-in" placeholder="Enter your answer…" step="any" onkeydown="if(event.key==='Enter')checkCalc()"><button class="chk-btn" onclick="checkCalc()">Check</button></div>
+    <span class="hint-lnk" onclick="toggleHint()">💡 Show hint</span>
+    <div class="hint-box" id="hint-box">${q.hint||''}</div>`;
+  }
+  h+=`<div class="fb" id="fb"></div>
+    <div class="nav-row">
+      <button class="nav-btn" onclick="prevQ()" ${idx===0?'disabled':''}>← Prev</button>
+      <button class="nav-btn primary" id="next-btn" onclick="nextQ()" style="display:none">Next →</button>
+      <button class="nav-btn" id="skip-btn" onclick="skipQ()">Skip →</button>
+      <span class="q-ctr">${idx+1} of ${qs.length}</span>
+    </div></div>`;
+  document.getElementById('q-container').innerHTML=h;
+  if(q.t==='calc')setTimeout(()=>document.getElementById('calc-in')?.focus(),50);
+}
+
+function toggleHint(){const h=document.getElementById('hint-box');if(h)h.style.display=h.style.display==='block'?'none':'block';}
+
+function checkMC(sel){
+  if(session.answered)return;
+  session.answered=true;
+  const q=session.qs[session.idx];
+  const ok=sel===q.a;
+  totalAns++;session.chProg[q.chId].ans++;
+  if(ok){totalCor++;session.chProg[q.chId].cor++;}
+  updateStats();
+  q.opts.forEach((_,i)=>{
+    const b=document.getElementById('opt'+i);
+    b.disabled=true;
+    if(i===q.a)b.classList.add('cor');
+    else if(i===sel&&!ok)b.classList.add('wrg');
+  });
+  showFB(ok,q.exp,null);
+  document.getElementById('qcard').classList.add(ok?'correct':'wrong');
+  document.getElementById('next-btn').style.display='block';
+  document.getElementById('skip-btn').style.display='none';
+}
+
+function checkCalc(){
+  if(session.answered)return;
+  const inp=document.getElementById('calc-in');
+  const val=parseFloat(inp.value);
+  if(isNaN(val))return;
+  session.answered=true;
+  const q=session.qs[session.idx];
+  const tol=q.tol!==undefined?q.tol:0.5;
+  const ok=Math.abs(val-q.a)<=tol;
+  totalAns++;session.chProg[q.chId].ans++;
+  if(ok){totalCor++;session.chProg[q.chId].cor++;}
+  updateStats();
+  inp.classList.add(ok?'cor':'wrg');inp.disabled=true;
+  document.querySelector('.chk-btn').disabled=true;
+  document.getElementById('qcard').classList.add(ok?'correct':'wrong');
+  showFB(ok,null,q.sol);
+  document.getElementById('next-btn').style.display='block';
+  document.getElementById('skip-btn').style.display='none';
+}
+
+function showFB(ok,exp,steps){
+  const fb=document.getElementById('fb');
+  fb.className='fb show '+(ok?'cor':'wrg');
+  let h=`<div class="fb-title">${ok?'✅ Correct!':'❌ Incorrect'}</div>`;
+  if(exp)h+=`<div>${exp}</div>`;
+  if(steps){h+=`<div class="sol">`;steps.forEach(s=>h+=`<div class="sol-step">${s}</div>`);h+=`</div>`;}
+  fb.innerHTML=h;
+}
+
+function nextQ(){session.idx++;renderQ();}
+function prevQ(){if(session.idx>0){session.idx--;renderQ();}}
+function skipQ(){session.idx++;renderQ();}
+
+function renderResults(){
+  stopTimer();
+  document.getElementById('prog-fill').style.width='100%';
+  const p=session.chProg;
+  const ids=Object.keys(p);
+  const totA=ids.reduce((s,id)=>s+p[id].ans,0);
+  const totC=ids.reduce((s,id)=>s+p[id].cor,0);
+  const pct=totA>0?Math.round(totC/totA*100):0;
+  const grade=pct>=80?'good':pct>=60?'mid':'low';
+  const ringCls=pct>=80?'':pct>=60?' mid':' low';
+  let rows='';
+  ids.forEach(id=>{
+    const ch=p[id];
+    const cp=ch.ans>0?Math.round(ch.cor/ch.ans*100):0;
+    const col=cp>=80?'var(--green)':cp>=60?'var(--yellow)':'var(--red)';
+    rows+=`<div class="ch-result-row">
+      <div class="cr-name">${ch.name}</div>
+      <div class="cr-bar"><div class="cr-fill" style="width:${cp}%;background:${col}"></div></div>
+      <div class="cr-score" style="color:${col}">${ch.ans>0?cp+'%':'—'} <span style="color:var(--muted);font-size:10px">(${ch.cor}/${ch.ans})</span></div>
+    </div>`;
+  });
+  document.getElementById('q-container').innerHTML=`
+    <div>
+      <div class="results-title">Session Complete 🎓</div>
+      <div class="results-sub">${session.label} · Time: ${fmtTime(elapsed)}</div>
+      <div class="score-ring-wrap">
+        <div class="score-ring${ringCls}">
+          <div class="ring-pct ${grade}">${pct}%</div>
+          <div class="ring-sub">Score</div>
+        </div>
+        <div class="results-stats">
+          <div class="rs-box"><div class="rs-n">${totC}</div><div class="rs-l">Correct</div></div>
+          <div class="rs-box"><div class="rs-n" style="color:var(--red)">${totA-totC}</div><div class="rs-l">Incorrect</div></div>
+          <div class="rs-box"><div class="rs-n" style="color:var(--muted)">${session.qs.length-totA}</div><div class="rs-l">Skipped</div></div>
+        </div>
+      </div>
+      <div class="breakdown-title">Chapter Breakdown</div>
+      <div class="ch-results">${rows}</div>
+      <div class="results-actions">
+        <button class="nav-btn primary" onclick="restartSession()">🔄 Retry Session</button>
+        <button class="nav-btn" onclick="showHome()">← Dashboard</button>
+        <button class="nav-btn" onclick="showFormulas()">📐 Formula Sheet</button>
+      </div>
+    </div>`;
+}
+
+function restartSession(){
+  const ids=Object.keys(session.chProg);
+  startGroup(ids,session.label);
+}
+
+updateStats();
+showHome();
+</script>
+</body>
+</html>
